@@ -1,6 +1,6 @@
 {
   "pack": {
     "pack_format": 1,
-    "description": "DESCRIPTION HERE"
+    "description": "Converts strings to char arrays"
   }
 }

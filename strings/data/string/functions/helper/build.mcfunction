@@ -1,7 +1,8 @@
 kill @e[tag=string.block]
+setblock ~1 ~ ~1 minecraft:command_block[facing=up]{Command:"help",auto:1b} destroy
 setblock ~ ~ ~1 minecraft:command_block[facing=north]{Command:"function string:run/start"} destroy
+summon minecraft:area_effect_cloud ~ ~ ~1 {Radius:0.0f,Duration:2147483647,Tags:["string","string.start"]}
 setblock ~ ~1 ~1 minecraft:oak_sign
-setblock ~ ~ ~2 minecraft:stone_button[face=wall,facing=south] destroy
 
 setblock ~ ~ ~-1 minecraft:chain_command_block[facing=north]{auto:1b,Command:"tag @e[name=string.tag2,type=minecraft:area_effect_cloud] list"} destroy
 setblock ~ ~ ~-2 minecraft:chain_command_block[facing=north]{auto:1b,Command:"function string:run/compare_build"} destroy

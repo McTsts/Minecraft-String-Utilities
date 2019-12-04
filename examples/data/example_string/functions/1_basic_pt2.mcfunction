@@ -1,0 +1,1 @@
+tellraw @a {"storage":"string:out","nbt":"out","interpret":true}
