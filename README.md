@@ -2,9 +2,9 @@
 Simple datapack that converts a string into a char array.
 
 ## Modules
-- strings: Made by McTsts, reads strings into char arrays
-- examples: Has some example functions
-*More coming soon*
+- strings: Reads strings into char arrays (Ts)
+- examples: Has some example functions (Ts)
+*More coming soon (Ts/gibbs)*
 
 ## Module - Strings
 #### Basic Instructions
