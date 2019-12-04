@@ -15,4 +15,4 @@ SirBenet, Onnowhere, Oskar & Zonteek!
 Thank you :)
 
 
-*If anyone ever find this, feel free to use these functions for whatever you want if you can understand them. Credit is appreciated, but not required.*
+*Please credit McTsts and gibbsly if you use this*
