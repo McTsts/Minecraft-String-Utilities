@@ -36,6 +36,7 @@ Datapack that has string operations sort of.
 2. Run `function unix:convert`
 3. Outputs as scores: Objective `sUnix` for players `day`, `month`, `year`, `hour`, `minute`, `second`, `weekday` (0 for Thursday, 6 for Wednesday)
 4. Outputs as CustomNames: month: `@e[type=minecraft:armor_stand,tag=month,tag=sUnix]`, weekday: `@e[type=minecraft:armor_stand,tag=weekday,tag=sUnix]`
+5. `function unix:display` shows the result
 
 ## Credit
 We were able to make this thanks to:
