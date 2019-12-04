@@ -5,6 +5,7 @@ Datapack that has string operations sort of.
 - strings: Reads strings into char arrays (Ts)
 - examples: Has some example functions (Ts)
 - substring: Can create "substrings" of char arrays (Ts)
+- unix: Converts unix timestamps into dates/times (Suso)
 - *More coming soon (Ts/gibbs)*
 
 ## Module - Strings
@@ -27,6 +28,13 @@ Datapack that has string operations sort of.
 5. Negative start starts counting from the end instead (start=-1 starts at the last character)
 6. Negative length removes is equal to (string length)+(length) (length=-1 for a 10 character string would be 9)
 7. The char array for this function can be generate using the Strings module and put into this module via a callback see Examples 8 and 9
+
+## Module - Unix
+#### Instructions
+1. Input unix timestamp in seconds: `scoreboard players set second sUnix 1575491054`
+2. Run `function unix:convert`
+3. Outputs as scores: Objective `sUnix` for players `day`, `month`, `year`, `hour`, `minute`, `second`, `weekday` (0 for Thursday, 6 for Wednesday)
+4. Outputs as CustomNames: month: `@e[type=minecraft:armor_stand,tag=month,tag=sUnix]`, weekday: `@e[type=minecraft:armor_stand,tag=weekday,tag=sUnix]`
 
 ## Credit
 We were able to make this thanks to:
