@@ -6,4 +6,5 @@ scoreboard players reset half string
 scoreboard players reset success string
 scoreboard players reset prev string
 scoreboard players reset iterations string
-scoreboard players reset prev string
+scoreboard players reset length string
+scoreboard players reset found string

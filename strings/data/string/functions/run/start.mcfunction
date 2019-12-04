@@ -38,7 +38,8 @@ tag @e[tag=string,type=area_effect_cloud] remove string
 # Searching
 scoreboard players set searching string 1
 scoreboard players set quoteString string 0
-execute store result score max_iterations string run data get storage string:in string
+execute store result score length string run data get storage string:in string
+scoreboard players operation max_iterations string = length string
 scoreboard players operation max_iterations string *= total string
 scoreboard players operation max_iterations string *= 2 Const
 

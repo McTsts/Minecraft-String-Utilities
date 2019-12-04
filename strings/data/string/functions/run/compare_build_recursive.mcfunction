@@ -6,4 +6,4 @@ execute if data storage string:internal tempChar[{char:"\""}] run data modify bl
 #\\"'
 
 data remove storage string:internal string[0]
-execute if data storage string:internal string[0] run function string:run/compare_build_entities
+execute if data storage string:internal string[0] run function string:run/compare_build_recursive

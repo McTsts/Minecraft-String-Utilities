@@ -14,7 +14,7 @@ data modify storage string:internal string append value " "
 # Normal method to concat the found characters into a string
 execute if score quoteString string matches 0 run function string:run/compare_build_array
 # If a quote is found in the string, the array method no longer works, and instead a recursive sign method is used (please somebody figure out something better)
-execute if score quoteString string matches 1 run data modify block ~ ~1 ~ Text1 set value '[""]'
-execute if score quoteString string matches 1 run function string:run/compare_build_entities
+execute if score quoteString string matches 1.. run data modify block ~ ~1 ~ Text1 set value '[""]'
+execute if score quoteString string matches 1.. run function string:run/compare_build_recursive
 # Text from sign into CustomName
 data modify entity @e[tag=string.comp2,limit=1] CustomName set from block ~ ~1 ~ Text1
