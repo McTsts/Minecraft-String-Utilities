@@ -1,14 +1,15 @@
 scoreboard objectives add string dummy
 scoreboard objectives add Const dummy
 scoreboard players set 2 Const 2
-scoreboard players set total string 76
+scoreboard players set total string 87
 scoreboard players set queue string 0
 scoreboard players set searching string -1
 gamerule commandBlockOutput false
 
+function string:run/reset
 data merge storage string:out {out:[]}
-data merge storage string:in {in:"",callback:"",callbackID:0,temp:{},input:[]}
-data merge storage string:internal {string:[],out:[],char:"",queue:[],callback:"",callbackID:0}
+data merge storage string:in {in:"",callback:"",callbackID:0,temp:{},input:[],temp:{callback:"",string:"",callbackID:""}}
+data merge storage string:internal {string:[],out:[],char:"",queue:[],callback:"",tempChar:[],callbackID:0}
 
 forceload remove -30000000 74048
 forceload add -30000000 74048

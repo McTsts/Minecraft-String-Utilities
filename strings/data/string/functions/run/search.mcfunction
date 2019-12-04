@@ -6,14 +6,13 @@ scoreboard players operation prev string = half string
 scoreboard players add half string 1
 scoreboard players operation half string /= 2 Const
 
-
 # Binary search in which direction?
 execute if score success string matches 0 run scoreboard players operation current string -= half string
 execute if score success string matches 1 run scoreboard players operation current string += half string
 
 # Binary search done?
-execute if score prev string matches ..1 if score success string matches 0 run function string:run/compare_found_one
-
+execute if score prev string matches ..1 if score success string matches 0 unless score current string > total string run function string:run/compare_found_one
+execute if score current string > total string run function string:run/quote_fix
 
 
 
