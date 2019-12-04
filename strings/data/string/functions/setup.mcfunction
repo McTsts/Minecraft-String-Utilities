@@ -1,7 +1,7 @@
 scoreboard objectives add string dummy
 scoreboard objectives add Const dummy
 scoreboard players set 2 Const 2
-scoreboard players set total string 87
+scoreboard players set total string 88
 scoreboard players set queue string 0
 scoreboard players set searching string -1
 gamerule commandBlockOutput false
