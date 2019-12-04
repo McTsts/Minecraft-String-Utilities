@@ -15,7 +15,7 @@ Press the button next to the impulse command block to start
 
 
 This is possible thanks to:
-SirBenet, Onnowhere, Oskar & Zonteek
+SirBenet, Onnowhere, Oskar & Zonteek!
 Thank you :)
 
 
