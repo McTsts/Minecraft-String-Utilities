@@ -1,5 +1,5 @@
 # Input a string
-data modify storage string:in in set value {string:"abc"}
+data modify storage string:in input append value {string:"abc"}
 
 # Read the string
 function string:do/read

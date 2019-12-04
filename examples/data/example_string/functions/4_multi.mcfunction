@@ -1,11 +1,8 @@
 # Several strings with same or different callback ids. Strings are put into a queue until they can be handelled
-data modify storage string:in in set value {string:"abc",callback:"function example_string:4_multi",callbackID:1}
-function string:do/read
-data modify storage string:in in set value {string:"abcde",callback:"function example_string:4_multi",callbackID:1}
-function string:do/read
-data modify storage string:in in set value {string:"abcdefgh",callback:"function example_string:4_multi",callbackID:1}
-function string:do/read
-data modify storage string:in in set value {string:"123",callback:"function example_string:4_multi",callbackID:2}
+data modify storage string:in input append value {string:"abc",callback:"function example_string:4_multi",callbackID:1}
+data modify storage string:in input append value {string:"abcde",callback:"function example_string:4_multi",callbackID:1}
+data modify storage string:in input append value {string:"abcdefgh",callback:"function example_string:4_multi",callbackID:1}
+data modify storage string:in input append value {string:"123",callback:"function example_string:4_multi",callbackID:2}
 function string:do/read
 
 # Output if in Callback
