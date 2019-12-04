@@ -92,7 +92,3 @@ execute if score month sUnix matches 9 run data merge entity @e[type=minecraft:a
 execute if score month sUnix matches 10 run data merge entity @e[type=minecraft:armor_stand,tag=month,limit=1] {CustomName:'{"text":"October"}'}
 execute if score month sUnix matches 11 run data merge entity @e[type=minecraft:armor_stand,tag=month,limit=1] {CustomName:'{"text":"November"}'}
 execute if score month sUnix matches 12 run data merge entity @e[type=minecraft:armor_stand,tag=month,limit=1] {CustomName:'{"text":"December"}'}
-
-#Display result
-tellraw @a [{"selector":"@e[type=minecraft:armor_stand,tag=weekday]"},{"text":", "},{"score":{"name":"day","objective":"sUnix"}},{"text":" of "},{"selector":"@e[type=minecraft:armor_stand,tag=month]"},{"text":" "},{"score":{"name":"year","objective":"sUnix"}}]
-tellraw @a [{"score":{"name":"hour","objective":"sUnix"}},{"text":":"},{"score":{"name":"minute","objective":"sUnix"}},{"text":":"},{"score":{"name":"second","objective":"sUnix"}}]
