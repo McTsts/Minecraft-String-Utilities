@@ -4,7 +4,7 @@ Simple datapack that converts a string into a char array.
 ## Modules
 - strings: Reads strings into char arrays (Ts)
 - examples: Has some example functions (Ts)
-*More coming soon (Ts/gibbs)*
+- *More coming soon (Ts/gibbs)*
 
 ## Module - Strings
 #### Basic Instructions
