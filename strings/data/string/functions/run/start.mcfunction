@@ -48,7 +48,10 @@ execute if score max_iterations string matches 0 run function string:run/reset
 # Current Character (in the middle of all available characters)
 function string:run/start_char
 
+# Reset Sign 
+data merge block ~ ~1 ~-3 {Text1:'""',Text2:'""'} 
+
 ### Storage
 # Output
 data merge storage string:in {string:"",callback:"",callbackID:0,in:{}}
-data merge storage string:internal {string:[],out:[],char:""}
+data merge storage string:internal {string:[],out:[],char:"",prefix:""}

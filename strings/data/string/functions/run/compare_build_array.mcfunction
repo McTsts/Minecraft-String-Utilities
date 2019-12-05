@@ -1,1 +1,0 @@
-data modify block ~ ~1 ~ Text1 set value '[{"storage":"string:internal","nbt":"string","interpret":true}]'
