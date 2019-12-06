@@ -1,5 +1,9 @@
 # Kill all the entities (I hope)
-kill @e[type=area_effect_cloud,scores={string=0}]
+kill 00000000-0073-9653-0000-000000000000
+kill 00000000-0073-9653-0000-000000000001
+kill 00000000-0073-9653-0000-000000000002
+kill 00000000-0073-9653-0000-000000000003
+kill 00000000-0073-9653-0000-000000000004
 scoreboard players set searching string -1
 scoreboard players reset current string
 scoreboard players reset half string

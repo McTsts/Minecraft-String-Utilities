@@ -5,7 +5,7 @@ data merge block ~ ~ ~ {auto:0b}
 ### Entities
 ## Used as the input text
 # Input Text
-summon minecraft:area_effect_cloud ~ ~ ~ {Radius:0.0f,Duration:2147483647,Tags:["string","string.comp"],CustomName:'"INPUT"'}
+summon minecraft:area_effect_cloud ~ ~ ~ {Radius:0.0f,Duration:2147483647,Tags:["string","string.comp"],CustomName:'"INPUT"',UUIDMost:7575123,UUIDLeast:1}
 data modify block ~ ~1 ~ Text1 set value '[{"text":" "},{"storage":"string:in","nbt":"string"},{"text":" "}]'
 data modify entity @e[tag=string.comp,type=area_effect_cloud,limit=1] CustomName set from block ~ ~1 ~ Text1
 data modify storage string:internal callback set from storage string:in callback
@@ -13,22 +13,16 @@ data modify storage string:internal callbackID set from storage string:in callba
 
 ## Used to binary search the text
 # Dynamic Comparison Text
-summon minecraft:area_effect_cloud ~ ~ ~ {Radius:0.0f,Duration:2147483647,Tags:["string","string.comp2"],CustomName:'[""]'}
+summon minecraft:area_effect_cloud ~ ~ ~ {Radius:0.0f,Duration:2147483647,Tags:["string","string.comp2"],CustomName:'[""]',UUIDMost:7575123,UUIDLeast:2}
 
 ## Used for sorting
-# Sorted Tag List
-summon minecraft:area_effect_cloud ~ ~ ~ {Radius:0.0f,Duration:2147483647,Tags:["string","a, b, c"],CustomName:'"string.tag"'}
-summon minecraft:area_effect_cloud ~ ~ ~ {Radius:0.0f,Duration:2147483647,Tags:["string"],CustomName:'"string.tag"'}
-
-## Used to compare to sorted list
-# Fake Tag List
-summon minecraft:area_effect_cloud ~ ~ ~ {Radius:0.0f,Duration:2147483647,Tags:["string","a","b","c"],CustomName:'"string.tag2"'}
-summon minecraft:area_effect_cloud ~ ~ ~ {Radius:0.0f,Duration:2147483647,Tags:["string"],CustomName:'"string.tag2"'}
+# Tag List
+summon minecraft:area_effect_cloud ~ ~ ~ {Radius:0.0f,Duration:2147483647,Tags:["string","a","b","c"],UUIDMost:7575123,UUIDLeast:0}
 
 ## Used to read the sorted list
 # Out Compare 
-summon minecraft:area_effect_cloud ~ ~ ~ {Radius:0.0f,Duration:2147483647,Tags:["string","string.out"],CustomName:'""'}
-summon minecraft:area_effect_cloud ~ ~ ~ {Radius:0.0f,Duration:2147483647,Tags:["string","string.out2"],CustomName:'""'}
+summon minecraft:area_effect_cloud ~ ~ ~ {Radius:0.0f,Duration:2147483647,Tags:["string","string.out"],CustomName:'""',UUIDMost:7575123,UUIDLeast:3}
+summon minecraft:area_effect_cloud ~ ~ ~ {Radius:0.0f,Duration:2147483647,Tags:["string","string.out2"],CustomName:'""',UUIDMost:7575123,UUIDLeast:4}
 
 ### Scores
 # Set a score for all for easier resetting
