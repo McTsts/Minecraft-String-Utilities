@@ -1,6 +1,7 @@
 ### Reset
 function string:run/reset
 data merge block ~ ~ ~ {auto:0b}
+data merge block -30000000 1 74062 {Command:"help"}
 
 ### Entities
 ## Used as the input text
@@ -22,7 +23,6 @@ summon minecraft:area_effect_cloud ~ ~ ~ {Radius:0.0f,Duration:2147483647,Tags:[
 ## Used to read the sorted list
 # Out Compare 
 summon minecraft:area_effect_cloud ~ ~ ~ {Radius:0.0f,Duration:2147483647,Tags:["string","string.out"],CustomName:'""',UUIDMost:7575123,UUIDLeast:3}
-summon minecraft:area_effect_cloud ~ ~ ~ {Radius:0.0f,Duration:2147483647,Tags:["string","string.out2"],CustomName:'""',UUIDMost:7575123,UUIDLeast:4}
 
 ### Scores
 # Set a score for all for easier resetting

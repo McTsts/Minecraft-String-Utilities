@@ -5,5 +5,7 @@ execute unless score quoteString string matches 1.. run scoreboard players set q
 scoreboard players remove found string 1
 data modify block -30000000 2 74063 Text2 set from block -30000000 2 74063 Text3
 function string:run/compare_found_one
+
 execute if score found string = length string run scoreboard players set quoteString string 2
-execute if score found string = length string run function string:run/compare_found
+execute if score found string = length string run function string:run/quote_last
+execute if score found string = length string run scoreboard players remove found string 1
