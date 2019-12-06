@@ -17,13 +17,13 @@ summon minecraft:area_effect_cloud ~ ~ ~ {Radius:0.0f,Duration:2147483647,Tags:[
 
 ## Used for sorting
 # Sorted Tag List
-summon minecraft:area_effect_cloud ~ ~ ~ {Radius:0.0f,Duration:2147483647,Tags:["string"],CustomName:'"string.tag"'}
 summon minecraft:area_effect_cloud ~ ~ ~ {Radius:0.0f,Duration:2147483647,Tags:["string","a, b, c"],CustomName:'"string.tag"'}
+summon minecraft:area_effect_cloud ~ ~ ~ {Radius:0.0f,Duration:2147483647,Tags:["string"],CustomName:'"string.tag"'}
 
 ## Used to compare to sorted list
 # Fake Tag List
-summon minecraft:area_effect_cloud ~ ~ ~ {Radius:0.0f,Duration:2147483647,Tags:["string"],CustomName:'"string.tag2"'}
 summon minecraft:area_effect_cloud ~ ~ ~ {Radius:0.0f,Duration:2147483647,Tags:["string","a","b","c"],CustomName:'"string.tag2"'}
+summon minecraft:area_effect_cloud ~ ~ ~ {Radius:0.0f,Duration:2147483647,Tags:["string"],CustomName:'"string.tag2"'}
 
 ## Used to read the sorted list
 # Out Compare 
