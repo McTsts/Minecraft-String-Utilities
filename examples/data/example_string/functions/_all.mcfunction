@@ -1,0 +1,10 @@
+function example_string:2_callback
+function example_string:3_callback2
+function example_string:4_multi
+function example_string:5_skull
+function example_string:6_all
+function example_string:7_substr_char_array
+function example_string:8_substr_string
+function example_string:9_substr_advanced
+function example_string:10_quote_test
+function example_string:11_seed

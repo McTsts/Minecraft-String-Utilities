@@ -6,4 +6,4 @@ execute unless score callback string matches 0.. run data modify storage string:
 function string:do/read
 
 # Output if in Callback
-execute if score callback string matches 1 run tellraw @a ["Skull Value: ",{"storage":"string:out","nbt":"out","interpret":false}]
+execute if score callback string matches 1 run tellraw @a ["[#5] Skull Value: ",{"storage":"string:out","nbt":"out","interpret":false}]

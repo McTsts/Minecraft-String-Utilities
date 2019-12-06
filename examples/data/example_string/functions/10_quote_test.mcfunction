@@ -16,4 +16,4 @@ data modify storage string:in input append value {string:"aa\"aa",callback:"func
 function string:do/read
 
 # Output if in Callback
-execute if score callback string matches 1 run tellraw @a {"storage":"string:out","nbt":"out","interpret":false}
+execute if score callback string matches 1 run tellraw @a ["[#10] ",{"storage":"string:out","nbt":"out","interpret":false}]

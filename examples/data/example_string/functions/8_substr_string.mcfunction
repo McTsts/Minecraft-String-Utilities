@@ -6,4 +6,4 @@ function string:do/read
 execute if score callback string matches 1 run data merge storage substring:in {start:7,length:8}
 execute if score callback string matches 1 run data modify storage substring:in string set from storage string:out out
 execute if score callback string matches 1 run function substring:do/start
-execute if score callback string matches 1 run tellraw @a ["Substr: ",{"storage":"substring:out","nbt":"string","interpret":true}]
+execute if score callback string matches 1 run tellraw @a ["[#8] Substr: ",{"storage":"substring:out","nbt":"string","interpret":true}]

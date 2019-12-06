@@ -6,5 +6,5 @@ data modify storage string:in input append value {string:"123",callback:"functio
 function string:do/read
 
 # Output if in Callback
-execute if score callback string matches 1 run tellraw @a ["The letters are: ",{"storage":"string:out","nbt":"out","interpret":true}]
-execute if score callback string matches 2 run tellraw @a ["The numbers are: ",{"storage":"string:out","nbt":"out","interpret":true}]
+execute if score callback string matches 1 run tellraw @a ["[#4] The letters are: ",{"storage":"string:out","nbt":"out","interpret":true}]
+execute if score callback string matches 2 run tellraw @a ["[#4] The numbers are: ",{"storage":"string:out","nbt":"out","interpret":true}]

@@ -4,7 +4,7 @@ execute unless score callback string matches 0.. run data modify storage string:
 function string:do/read
 
 # Output if in Callback
-execute if score callback string matches 1 run tellraw @a ["Seed: ",{"storage":"string:out","nbt":"out","interpret":false}]
+execute if score callback string matches 1 run tellraw @a ["[#11] Seed: ",{"storage":"string:out","nbt":"out","interpret":false}]
 
 # Reset
 setblock -30000000 3 74063 air
