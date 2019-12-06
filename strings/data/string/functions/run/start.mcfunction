@@ -5,19 +5,19 @@ data merge block ~ ~ ~ {auto:0b}
 ### Entities
 ## Used as the input text
 # Input Text
-summon minecraft:area_effect_cloud ~ ~ ~ {Radius:0.0f,Duration:2147483647,Tags:["string","string.comp"],CustomName:'"INPUT"',UUIDMost:7575123,UUIDLeast:1}
-data modify block ~ ~1 ~ Text1 set value '[{"text":" "},{"storage":"string:in","nbt":"string"},{"text":" "}]'
-data modify entity @e[tag=string.comp,type=area_effect_cloud,limit=1] CustomName set from block ~ ~1 ~ Text1
+summon minecraft:area_effect_cloud ~ ~ ~ {Radius:0.0f,Duration:2147483647,Tags:["string","string.comp"],CustomName:'""',UUIDMost:7575123,UUIDLeast:1}
+data modify block -30000000 2 74063 Text1 set value '[{"text":" "},{"storage":"string:in","nbt":"string"},{"text":" "}]'
+data modify entity @e[tag=string.comp,type=area_effect_cloud,limit=1] CustomName set from block -30000000 2 74063 Text1
 data modify storage string:internal callback set from storage string:in callback
 data modify storage string:internal callbackID set from storage string:in callbackID
 
 ## Used to binary search the text
 # Dynamic Comparison Text
-summon minecraft:area_effect_cloud ~ ~ ~ {Radius:0.0f,Duration:2147483647,Tags:["string","string.comp2"],CustomName:'[""]',UUIDMost:7575123,UUIDLeast:2}
+summon minecraft:area_effect_cloud ~ ~ ~ {Radius:0.0f,Duration:2147483647,Tags:["string","string.comp2"],CustomName:'""',UUIDMost:7575123,UUIDLeast:2}
 
 ## Used for sorting
 # Tag List
-summon minecraft:area_effect_cloud ~ ~ ~ {Radius:0.0f,Duration:2147483647,Tags:["string","a","b","c"],UUIDMost:7575123,UUIDLeast:0}
+summon minecraft:area_effect_cloud ~ ~ ~ {Radius:0.0f,Duration:2147483647,Tags:["string","a","b","c"],CustomName:'""',UUIDMost:7575123,UUIDLeast:0}
 
 ## Used to read the sorted list
 # Out Compare 
@@ -43,7 +43,7 @@ execute if score max_iterations string matches 0 run function string:run/reset
 function string:run/start_char
 
 # Reset Sign 
-data merge block ~ ~1 ~-3 {Text1:'""',Text2:'""'} 
+data merge block -30000000 2 74063 {Text1:'""',Text2:'""',Text3:'""',Text4:'""'} 
 
 ### Storage
 # Output
