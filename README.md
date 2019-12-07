@@ -6,6 +6,7 @@ Datapack that has string operations sort of.
 - examples: Has some example functions (Ts)
 - string_operations: Can create "substrings" of char arrays (Ts)
 - unix: Converts unix timestamps into dates/times (Suso)
+- base64: converts an array of base64 chars into an array of ascii chars (gibbs)
 - *More coming soon (Ts/gibbs)*
 
 ## Module - Strings
@@ -37,6 +38,18 @@ Datapack that has string operations sort of.
 3. Outputs as scores: Objective `sUnix` for players `day`, `month`, `year`, `hour`, `minute`, `second`, `weekday` (0 for Thursday, 6 for Wednesday)
 4. Outputs as CustomNames: month: `@e[type=minecraft:armor_stand,tag=month,tag=sUnix]`, weekday: `@e[type=minecraft:armor_stand,tag=weekday,tag=sUnix]`
 5. `function unix:display` shows the result
+
+## Module - Base64
+#### Basic Instructions
+- setup: `/function base64:setup` 
+1. `/data modify storage base64:in string set value ["S", "G", "V", "s", "b", "G", "8", "g", "V", "2", "9", "y", "b", "G", "Q", "h"]`
+2. `/function base64:convert`
+3. `/data get storage ascii:main text` to read the output
+3. `/function print:tellraw` gives a plaintext readout of the output array
+
+#### Other Instructions
+- `/function base64:call` will copy the array of characters from the output array of the strings module, then convert them. (Good for converting player skull data)
+- `/function print:call` converts an array of bytes in the `storage ascii:main bytes` into ascii characters (ascii values 32 to 126)
 
 ## Credit
 We were able to make this thanks to:
