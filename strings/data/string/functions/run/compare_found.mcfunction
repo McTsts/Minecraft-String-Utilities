@@ -15,4 +15,4 @@ function string:run/reset
 
 schedule function string:run/queue_next 1t
 
-
+gamerule sendCommandFeedback false

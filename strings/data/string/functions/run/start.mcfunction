@@ -2,6 +2,7 @@
 function string:run/reset
 data merge block ~ ~ ~ {auto:0b}
 data merge block -30000000 1 74062 {Command:"help"}
+gamerule sendCommandFeedback true
 
 ### Entities
 ## Used as the input text

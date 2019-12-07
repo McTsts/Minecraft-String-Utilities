@@ -1,10 +1,21 @@
-function example_string:2_callback
-function example_string:3_callback2
-function example_string:4_multi
-function example_string:5_skull
-function example_string:6_all
-function example_string:7_substr_char_array
-function example_string:8_substr_string
-function example_string:9_substr_advanced
-function example_string:10_quote_test
-function example_string:11_seed
+## Does all tests/examples
+scoreboard players add helper string 1
+
+execute if score helper string matches 0 run schedule function example_string:_helper 1t
+
+execute if score helper string matches 2 run function example_string:2_callback
+execute if score helper string matches 2 run function example_string:3_callback2
+execute if score helper string matches 2 run function example_string:4_multi
+execute if score helper string matches 2 run function example_string:5_skull
+execute if score helper string matches 2 run function example_string:6_all
+execute if score helper string matches 2 run schedule function example_string:_helper 1t
+
+execute if score helper string matches 5 run function example_string:8_substr_string
+execute if score helper string matches 5 run function example_string:9_substr_advanced
+execute if score helper string matches 5 run function example_string:10_quote_test
+execute if score helper string matches 5 run schedule function example_string:_helper 1t
+
+
+execute if score helper string matches 8 run function example_string:12_name
+execute if score helper string matches 8 run schedule function example_string:_helper 1t
+
