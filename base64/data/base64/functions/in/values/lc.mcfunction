@@ -1,0 +1,27 @@
+#char checks a-z
+execute if data storage base64:in {temp:"a"} run function base64:in/bits/26
+execute if data storage base64:in {temp:"b"} run function base64:in/bits/27
+execute if data storage base64:in {temp:"c"} run function base64:in/bits/28
+execute if data storage base64:in {temp:"d"} run function base64:in/bits/29
+execute if data storage base64:in {temp:"e"} run function base64:in/bits/30
+execute if data storage base64:in {temp:"f"} run function base64:in/bits/31
+execute if data storage base64:in {temp:"g"} run function base64:in/bits/32
+execute if data storage base64:in {temp:"h"} run function base64:in/bits/33
+execute if data storage base64:in {temp:"i"} run function base64:in/bits/34
+execute if data storage base64:in {temp:"j"} run function base64:in/bits/35
+execute if data storage base64:in {temp:"k"} run function base64:in/bits/36
+execute if data storage base64:in {temp:"l"} run function base64:in/bits/37
+execute if data storage base64:in {temp:"m"} run function base64:in/bits/38
+execute if data storage base64:in {temp:"n"} run function base64:in/bits/39
+execute if data storage base64:in {temp:"o"} run function base64:in/bits/40
+execute if data storage base64:in {temp:"p"} run function base64:in/bits/41
+execute if data storage base64:in {temp:"q"} run function base64:in/bits/42
+execute if data storage base64:in {temp:"r"} run function base64:in/bits/43
+execute if data storage base64:in {temp:"s"} run function base64:in/bits/44
+execute if data storage base64:in {temp:"t"} run function base64:in/bits/45
+execute if data storage base64:in {temp:"u"} run function base64:in/bits/46
+execute if data storage base64:in {temp:"v"} run function base64:in/bits/47
+execute if data storage base64:in {temp:"w"} run function base64:in/bits/48
+execute if data storage base64:in {temp:"x"} run function base64:in/bits/49
+execute if data storage base64:in {temp:"y"} run function base64:in/bits/50
+execute if data storage base64:in {temp:"z"} run function base64:in/bits/51
