@@ -6,6 +6,4 @@ function string:do/read
 
 # Output if in Callback
 execute if score callback string matches 1 run tellraw @a ["[#11] Output: ",{"storage":"string:out","nbt":"out","interpret":false}]
-
-# Reset
-setblock -30000000 3 74063 air
+execute if score callback string matches 1 run setblock -30000000 3 74063 air destroy
