@@ -41,7 +41,6 @@ Datapack that has string operations sort of.
 
 ## Module - Base64
 #### Basic Instructions
-- setup: `/function base64:setup` 
 1. `/data modify storage base64:in string set value ["S", "G", "V", "s", "b", "G", "8", "g", "V", "2", "9", "y", "b", "G", "Q", "h"]`
 2. `/function base64:convert`
 3. `/data get storage ascii:main text` to read the output
