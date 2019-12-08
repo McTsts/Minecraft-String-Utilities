@@ -7,7 +7,7 @@ Datapack that has string operations sort of.
 - string_operations: Can create "substrings" of char arrays (Ts)
 - unix: Converts unix timestamps into dates/times (Suso)
 - base64: converts an array of base64 chars into an array of ascii chars (gibbs)
-- parcer: parses an array of chars formatted as a json object into name/value pairs 
+- parcer: parses an array of chars formatted as a json object into name/value pairs (gibbs)
 - *More coming soon (Ts/gibbs)*
 
 ## Module - Strings
