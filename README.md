@@ -7,6 +7,7 @@ Datapack that has string operations sort of.
 - string_operations: Can create "substrings" of char arrays (Ts)
 - unix: Converts unix timestamps into dates/times (Suso)
 - base64: converts an array of base64 chars into an array of ascii chars (gibbs)
+- parcer: parses an array of chars formatted as a json object into name/value pairs 
 - *More coming soon (Ts/gibbs)*
 
 ## Module - Strings
@@ -49,6 +50,19 @@ Datapack that has string operations sort of.
 #### Other Instructions
 - `/function base64:call` will copy the array of characters from the output array of the strings module, then convert them. (Good for converting player skull data)
 - `/function print:call` converts an array of bytes in the `storage ascii:main bytes` into ascii characters (ascii values 32 to 126)
+
+## Module - Parcer
+#### Basic Instructions
+1. `/data modify storage parce:in in set value ["{",'"',"a",'"',":",'"',"b",'"',"}"]`
+2. `/function parcer:call`
+3. `/data get storage parce:main out` to read the output
+
+#### Other info
+- Itegrated with this module is a base(x) converter, instructions for its use can be found [here](https://github.com/gibbsly/fantastic-palm-tree)
+- The output of this is formatted in name/value pairs inside of an output array, the notation is `{Value:[],Type:"",Extra:[],Name:[]}` Minecraft itself orders the data like this, I do not have any control over how the data is ordered inside of the pair itself.
+- currently arrays aren't supported, it jsut copies all data from the start of the array (`[`) to the end of the array (`]`), leaving all data within un-prosessed
+- escape characters aren't recognised/supported, so avoid colons (:) in the name of a pair, and curly brackets or commas in the value of a pair. 
+- It is spelt wrong, I know, it is too late to go back now.
 
 ## Credit
 We were able to make this thanks to:
