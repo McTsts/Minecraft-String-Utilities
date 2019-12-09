@@ -61,7 +61,7 @@ Datapack that has string operations sort of.
 - Itegrated with this module is a base(x) converter, instructions for its use can be found [here](https://github.com/gibbsly/fantastic-palm-tree)
 - The output of this is formatted in name/value pairs inside of an output array, the notation is `{Value:[],Type:"",Extra:[],Name:[]}` Minecraft itself orders the data like this, I do not have any control over how the data is ordered inside of the pair itself.
 - currently arrays aren't supported, it jsut copies all data from the start of the array (`[`) to the end of the array (`]`), leaving all data within un-prosessed
-- escape characters aren't recognised/supported, so avoid colons (:) in the name of a pair, and curly brackets or commas in the value of a pair. 
+- escape characters are different than standard json, you still use a `\` but where you use them is different. in a name you want to escape any colons (`:`) and in values you want to escape commas and closed curly brackets (`} and ,`). To enter a backslash (`\`) into a char array you need to use 2, so `"\\"`.
 - It is spelt wrong, I know, it is too late to go back now.
 
 ## Credit
