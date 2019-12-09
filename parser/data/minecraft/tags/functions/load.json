@@ -2,6 +2,6 @@
  "values": [
  "rev_conv:setup",
  "base_conv:setup",
- "parcer:setup"
+ "parser:setup"
  ]
 }
