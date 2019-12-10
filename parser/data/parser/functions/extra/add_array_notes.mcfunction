@@ -1,2 +1,2 @@
-#adds "unresolved" note to the "Extra" array and checks for un-needed open bracket 
-data modify storage parse:main pair.Extra append value "unresolved"
+#adds "unresolved" note to the "Extra" array in necessary
+execute if data storage parse:main pair.Value[0] run data modify storage parse:main pair.Extra append value "unresolved"
