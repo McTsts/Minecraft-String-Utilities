@@ -58,7 +58,7 @@ Datapack that has string operations sort of.
 3. `/data get storage parse:main out` to read the output
 
 #### Other info
-- Itegrated with this module is a base(x) converter, instructions for its use can be found [here](https://github.com/gibbsly/fantastic-palm-tree)
+- Integrated with this module is a base(x) converter, instructions for its use can be found [here](https://github.com/gibbsly/fantastic-palm-tree)
 - The output of this is formatted in name/value pairs inside of an output array, the notation is `{Value:[],Type:"",Extra:[],Name:[]}` Minecraft itself orders the data like this, I do not have any control over how the data is ordered inside of the pair itself.
 - currently arrays aren't supported, it jsut copies all data from the start of the array (`[`) to the end of the array (`]`), leaving all data within un-prosessed.
 - escape characters are avalible, you are going to want to escape any qotes (`"`) within the name or value entires. To enter a backslash (`\`) into a char array you need to use 2, so `"\\"`.
