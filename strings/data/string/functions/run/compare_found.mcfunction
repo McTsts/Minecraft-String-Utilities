@@ -14,5 +14,3 @@ execute if data storage string:internal callback run function string:run/callbac
 function string:run/reset
 
 schedule function string:run/queue_next 1t
-
-gamerule sendCommandFeedback false
