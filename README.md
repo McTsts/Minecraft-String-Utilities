@@ -7,6 +7,7 @@ Datapack that has string operations sort of.
 - string_operations: Can create "substrings" of char arrays (Ts)
 - unix: Converts unix timestamps into dates/times (Suso)
 - base64: converts an array of base64 chars into an array of ascii chars (gibbs)
+- parser: parses an array of chars formatted as a json object into name/value pairs (gibbs)
 - *More coming soon (Ts/gibbs)*
 
 ## Module - Strings
@@ -49,6 +50,18 @@ Datapack that has string operations sort of.
 #### Other Instructions
 - `/function base64:call` will copy the array of characters from the output array of the strings module, then convert them. (Good for converting player skull data)
 - `/function print:call` converts an array of bytes in the `storage ascii:main bytes` into ascii characters (ascii values 32 to 126)
+
+## Module - Parser
+#### Basic Instructions
+1. `/data modify storage parse:in in set value ["{",'"',"a",'"',":",'"',"b",'"',"}"]`
+2. `/function parser:call`
+3. `/data get storage parse:main out` to read the output
+
+#### Other info
+- Integrated with this module is a base(x) converter, instructions for its use can be found [here](https://github.com/gibbsly/fantastic-palm-tree)
+- The output of this is formatted in name/value pairs inside of an output array, the notation is `{Value:[],Type:"",Extra:[],Name:[]}` Minecraft itself orders the data like this, I do not have any control over how the data is ordered inside of the pair itself.
+- currently arrays aren't supported, it jsut copies all data from the start of the array (`[`) to the end of the array (`]`), leaving all data within un-prosessed.
+- escape characters are avalible, you are going to want to escape any qotes (`"`) within the name or value entires. To enter a backslash (`\`) into a char array you need to use 2, so `"\\"`.
 
 ## Credit
 We were able to make this thanks to:
