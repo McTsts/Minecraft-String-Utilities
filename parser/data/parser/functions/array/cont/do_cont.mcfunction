@@ -2,8 +2,8 @@
 data modify storage parse:list temp_list set value []
 function parser:array/cont/cont_copy
 
-#parsing array objects
+#parsing object arrays
 execute if data storage parse:list {Value:{ArrayType:"object"}} run function parser:array/cont/pro/object_parse
 
-#copying char array to value (temp)
-execute if data storage parse:list {Value:{ArrayType:"array"}} run data modify storage parse:list Value.List set from storage parse:list temp_list
+#parsing array arrays
+execute if data storage parse:list {Value:{ArrayType:"array"}} run function parser:array/cont/array_parse
