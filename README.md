@@ -57,10 +57,16 @@ Datapack that has string operations sort of.
 2. `/function parser:call`
 3. `/data get storage parse:main out` to read the output
 
+#### Numbers
+1. numbers longer than 9 digits are displayed in a specifc way, for example the number `-3234567.8901` would be displayed as `[-1, 3, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 4]` and if it is not in an array it's type would be `"long_number"`
+2. the format for long numbers is `[p,n,d]` 
+- `p` is `-1` if the number is negitive, and `1` if it is positive
+- `n` is the digits in order
+- `d` is the position of the decimal point from the right
+
 #### Other info
 - Integrated with this module is a base(x) converter, instructions for its use can be found [here](https://github.com/gibbsly/fantastic-palm-tree)
 - The output of this is formatted in name/value pairs inside of an output array, the notation is `{Value:[],Type:"",Extra:[],Name:[]}` Minecraft itself orders the data like this, I do not have any control over how the data is ordered inside of the pair itself.
-- currently arrays aren't supported, it jsut copies all data from the start of the array (`[`) to the end of the array (`]`), leaving all data within un-prosessed.
 - escape characters are avalible, you are going to want to escape any qotes (`"`) within the name or value entires. To enter a backslash (`\`) into a char array you need to use 2, so `"\\"`.
 
 ## Credit
