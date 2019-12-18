@@ -19,5 +19,8 @@ execute if score helper string matches 5 run schedule function example_string:_h
 execute if score helper string matches 8 run function example_string:12_name
 execute if score helper string matches 8 run function example_string:13_decode64
 execute if score helper string matches 8 run function example_string:14_get_unix_time
+execute if score helper string matches 8 run replaceitem entity @a weapon.mainhand minecraft:writable_book{pages:["Page1","Page2","Page3"]}
+execute if score helper string matches 8 run function example_string:15_from_book
+execute if score helper string matches 8 run replaceitem entity @a weapon.mainhand minecraft:air
 execute if score helper string matches 8 run schedule function example_string:_helper 1t
 
