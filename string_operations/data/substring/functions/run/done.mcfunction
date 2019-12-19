@@ -1,1 +1,0 @@
-data modify storage substring:out string set from storage substring:internal string

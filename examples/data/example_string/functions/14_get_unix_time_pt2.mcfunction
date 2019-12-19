@@ -19,7 +19,7 @@ function rev_conv:call
 
 #unix conversion
 scoreboard players operation second sUnix = out= rev_conv.num
-function unix:convert
+function application_unix:convert
 tellraw @a ["[#14] Outputing timestamp..."]
-function unix:display
+function application_unix:display
 

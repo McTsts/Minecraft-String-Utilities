@@ -4,6 +4,10 @@ execute unless score callback string matches 1.. run tellraw @a ["[#11] Input: "
 execute unless score callback string matches 1.. run data modify storage string:in input append from storage string:in temp
 function string:do/read
 
+# JSON
+data modify storage parse:in in set from storage string:out out
+function parser:call
+
 # Output if in Callback
-execute if score callback string matches 1 run tellraw @a ["[#11] Output: ",{"storage":"string:out","nbt":"out","interpret":false}]
+execute if score callback string matches 1 run tellraw @a ["[#11] Output: ",{"nbt":"out[{Name:[main]}].Value[{Name:[e,x,t,r,a]}].Value.List[0][{Name:[w,i,t,h]}].Value.List[0][{Name:[e,x,t,r,a]}].Value.List[0][{Name:[t,e,x,t]}].Value","storage":"parse:main","interpret":true}]
 execute if score callback string matches 1 run setblock -30000000 3 74063 air destroy

@@ -1,0 +1,7 @@
+{
+ "values": [
+ "application_unix:load",
+ "application_name:load",
+ "application_cape:load"
+ ]
+}

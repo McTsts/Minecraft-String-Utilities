@@ -1,0 +1,6 @@
+{
+  "pack": {
+    "pack_format": 1,
+    "description": "Applications for string manipulation. Mainly relies on combining the other modules."
+  }
+}

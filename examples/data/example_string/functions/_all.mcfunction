@@ -22,5 +22,6 @@ execute if score helper string matches 8 run function example_string:14_get_unix
 execute if score helper string matches 8 run replaceitem entity @a weapon.mainhand minecraft:writable_book{pages:["Page1","Page2","Page3"]}
 execute if score helper string matches 8 run function example_string:15_from_book
 execute if score helper string matches 8 run replaceitem entity @a weapon.mainhand minecraft:air
+execute if score helper string matches 8 run function example_string:16_simplify_name
 execute if score helper string matches 8 run schedule function example_string:_helper 1t
 
