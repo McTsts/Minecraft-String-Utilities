@@ -10,8 +10,9 @@ gamerule sendCommandFeedback true
 summon minecraft:area_effect_cloud ~ ~ ~ {Radius:0.0f,Duration:2147483647,Tags:["string","string.comp"],CustomName:'""',UUIDMost:7575123,UUIDLeast:1}
 data modify block -30000000 2 74063 Text1 set value '[{"text":" "},{"storage":"string:in","nbt":"string"},{"text":"          "}]'
 data modify entity @e[tag=string.comp,type=area_effect_cloud,limit=1] CustomName set from block -30000000 2 74063 Text1
-data modify storage string:internal callback set from storage string:in callback
-data modify storage string:internal callbackID set from storage string:in callbackID
+data modify storage string:internal callback set value {command:"",in:""}
+data modify storage string:internal callback.command set from storage string:in callback.command
+data modify storage string:internal callback.id set from storage string:in callback.id
 
 ## Used to binary search the text
 # Dynamic Comparison Text
@@ -48,5 +49,5 @@ data merge block -30000000 2 74063 {Text1:'""',Text2:'""',Text3:'""',Text4:'""'}
 
 ### Storage
 # Output
-data merge storage string:in {string:"",callback:"",callbackID:0,in:{}}
+data merge storage string:in {string:"",callback:{command:"",id:0},in:{}}
 data merge storage string:internal {string:[],out:[],char:"",prefix:""}
