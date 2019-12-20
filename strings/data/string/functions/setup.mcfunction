@@ -9,11 +9,11 @@ gamerule commandBlockOutput false
 
 function string:run/reset
 data merge storage string:out {out:[]}
-data merge storage string:in {in:"",callback:"",callbackID:0,temp:{},input:[],temp:{callback:"",string:"",callbackID:""}}
-data merge storage string:internal {string:[],out:[],char:"",queue:[],callback:"",tempChar:[],callbackID:0}
+data merge storage string:in {in:"",callback:{command:"",id:0},temp:{},input:[],temp:{callback:{command:"",id:0},async:{iterations:-1,parallel:0b},string:""}}
+data merge storage string:internal {string:[],out:[],char:"",queue:[],callback:{command:"",id:0},tempChar:[]}
 
 forceload remove -30000000 74048
 forceload add -30000000 74048
-execute positioned -30000000 1 74063 unless score loaded string matches 2 run function string:helper/build
+execute positioned -30000000 1 74063 unless score loaded string matches 3 run function string:helper/build
 execute positioned -30000000 1 74063 unless block ~ ~ ~ command_block run function string:helper/build
 scoreboard players set loaded string 2

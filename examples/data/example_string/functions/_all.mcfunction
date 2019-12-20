@@ -23,5 +23,6 @@ execute if score helper string matches 8 run replaceitem entity @a weapon.mainha
 execute if score helper string matches 8 run function example_string:15_from_book
 execute if score helper string matches 8 run replaceitem entity @a weapon.mainhand minecraft:air
 execute if score helper string matches 8 run function example_string:16_simplify_name
+execute if score helper string matches 8 run function example_string:17_async
 execute if score helper string matches 8 run schedule function example_string:_helper 1t
 

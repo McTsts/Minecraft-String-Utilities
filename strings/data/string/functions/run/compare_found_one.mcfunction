@@ -10,3 +10,6 @@ data modify block -30000000 2 74063 Text2 set value '[{"block":"-30000000 2 7406
 
 function string:run/start_char
 scoreboard players add found string 1
+
+# Async Handling
+execute if score iterations_left string matches 0.. run function string:run/async/found_one

@@ -4,15 +4,19 @@ data merge block ~ ~ ~ {auto:0b}
 data merge block -30000000 1 74062 {Command:"help me"}
 gamerule sendCommandFeedback true
 
+# Storage
+data modify storage string:internal callback.command set from storage string:in callback.command
+data modify storage string:internal callback.id set from storage string:in callback.id
+data modify storage string:internal async.iterations set from storage string:in async.iterations
+data modify storage string:internal async.parallel set from storage string:in async.parallel
+execute store result score iterations_left string run data get storage string:internal async.iterations
+
 ### Entities
 ## Used as the input text
 # Input Text
 summon minecraft:area_effect_cloud ~ ~ ~ {Radius:0.0f,Duration:2147483647,Tags:["string","string.comp"],CustomName:'""',UUIDMost:7575123,UUIDLeast:1}
 data modify block -30000000 2 74063 Text1 set value '[{"text":" "},{"storage":"string:in","nbt":"string"},{"text":"          "}]'
 data modify entity @e[tag=string.comp,type=area_effect_cloud,limit=1] CustomName set from block -30000000 2 74063 Text1
-data modify storage string:internal callback set value {command:"",in:""}
-data modify storage string:internal callback.command set from storage string:in callback.command
-data modify storage string:internal callback.id set from storage string:in callback.id
 
 ## Used to binary search the text
 # Dynamic Comparison Text
@@ -49,5 +53,5 @@ data merge block -30000000 2 74063 {Text1:'""',Text2:'""',Text3:'""',Text4:'""'}
 
 ### Storage
 # Output
-data merge storage string:in {string:"",callback:{command:"",id:0},in:{}}
+data merge storage string:in {string:"",callback:{command:"",id:0},async:{iterations:-1,parallel:0b},in:{}}
 data merge storage string:internal {string:[],out:[],char:"",prefix:""}

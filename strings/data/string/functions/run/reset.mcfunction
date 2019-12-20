@@ -11,3 +11,4 @@ scoreboard players reset prev string
 scoreboard players reset iterations string
 scoreboard players reset length string
 scoreboard players reset found string
+scoreboard players reset foundX string
