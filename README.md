@@ -3,25 +3,21 @@ Datapack that has string operations sort of.
 
 ## Modules
 ###### Ts
-- strings: Reads strings into char arrays
-- strings/substring: Can create "substrings" of char arrays
-- strings/case: Has to lower, to upper case and get case functions
-- *dictionary: WIP part for a tts module*
-
-
-- examples: Has some example functions (Ts)
-- application/name: Shortens names using a set of rules, for occasions where messages may require names below a certain length
+- [strings](https://github.com/McTsts/Minecraft-String-Utilities/blob/master/README.md#module---strings): Reads strings into char arrays
+- [strings/substring](https://github.com/McTsts/Minecraft-String-Utilities/blob/master/README.md#module---stringssubstring): Can create "substrings" of char arrays
+- [strings/case](https://github.com/McTsts/Minecraft-String-Utilities/blob/master/README.md#module---stringscase): Has to lower, to upper case and get case functions
+- *[dictionary](https://github.com/McTsts/Minecraft-String-Utilities/blob/master/README.md#module---dictionary): WIP part for a tts module*
+- [examples](https://github.com/McTsts/Minecraft-String-Utilities/blob/master/README.md#module---examples): Has some example functions (Ts)
+- [application/name](https://github.com/McTsts/Minecraft-String-Utilities/blob/master/README.md#module---applicationname): Shortens names using a set of rules, for occasions where messages may require names below a certain length
 
 ###### Gibbs
-- base64: converts an array of base64 chars into an array of ascii chars (gibbs)
-- parser: parses an array of chars formatted as a json object into name/value pairs (gibbs)
-
-
-- application/cape: Detects which cape (if any) a player has
+- [base64](https://github.com/McTsts/Minecraft-String-Utilities/blob/master/README.md#module---base64): converts an array of base64 chars into an array of ascii chars (gibbs)
+- [parser](https://github.com/McTsts/Minecraft-String-Utilities/blob/master/README.md#module---parser): parses an array of chars formatted as a json object into name/value pairs (gibbs)
+- [application/cape](https://github.com/McTsts/Minecraft-String-Utilities/blob/master/README.md#module---applicationcape): Detects which cape (if any) a player has
 
 
 ###### Suso
-- application/unix: Converts unix timestamps into dates/times (Suso)
+- [application/unix](https://github.com/McTsts/Minecraft-String-Utilities/blob/master/README.md#module---applicationunix): Converts unix timestamps into dates/times (Suso)
 
 *More modules are in development*
 
