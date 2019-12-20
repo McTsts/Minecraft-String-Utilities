@@ -13,3 +13,5 @@ scoreboard players add found string 1
 
 # Async Handling
 execute if score iterations_left string matches 0.. run function string:run/async/found_one
+
+execute if score parallel string matches 1 run function string:run/parallel/found_one

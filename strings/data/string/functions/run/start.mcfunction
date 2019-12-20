@@ -10,6 +10,8 @@ data modify storage string:internal callback.id set from storage string:in callb
 data modify storage string:internal async.iterations set from storage string:in async.iterations
 data modify storage string:internal async.parallel set from storage string:in async.parallel
 execute store result score iterations_left string run data get storage string:internal async.iterations
+execute store result score parallel string run data get storage string:internal async.parallel
+execute if score parallel string matches 1 run function string:run/parallel/start
 
 ### Entities
 ## Used as the input text
@@ -53,5 +55,6 @@ data merge block -30000000 2 74063 {Text1:'""',Text2:'""',Text3:'""',Text4:'""'}
 
 ### Storage
 # Output
-data merge storage string:in {string:"",callback:{command:"",id:0},async:{iterations:-1,parallel:0b},in:{}}
+data merge storage string:out {parallel:[]}
+data merge storage string:in {string:"",callback:{command:"",id:0},async:{iterations:-1,parallel:0},in:{}}
 data merge storage string:internal {string:[],out:[],char:"",prefix:""}

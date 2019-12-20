@@ -12,3 +12,4 @@ scoreboard players reset iterations string
 scoreboard players reset length string
 scoreboard players reset found string
 scoreboard players reset foundX string
+setblock -29999999 1 74063 minecraft:air destroy
