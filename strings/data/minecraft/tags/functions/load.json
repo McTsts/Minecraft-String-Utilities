@@ -1,5 +1,6 @@
 {
  "values": [
+ "substring:setup",
  "string:setup"
  ]
 }
