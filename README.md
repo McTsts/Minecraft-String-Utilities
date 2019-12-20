@@ -35,6 +35,9 @@ Datapack that has string operations sort of.
 ###### Async
 1. Replacement for Step 1: `data modify storage string:in input append value {string:"abcde",async:{iterations:10}}`
 2. After 'async.iterations' iterations the module stops processing and continues in the next tick. Can be combined with callbacks and the callback will be called once the entire string has been processed.
+###### Parallel
+1. Replacement for Step 1: `data modify storage string:in input append value {string:"abcde",async:{iterations:10,parallel:1}}`
+2. After 'async.iterations' iterations the module stops processing and continues in the next tick. The callback is called every tick with everything found in that tick, as well as once at the end with the entire string. This allows parallely already doing something with the start of the string while the rest of the string is still parsing.
 
 ## Module - Strings/Substring
 ### Substring
