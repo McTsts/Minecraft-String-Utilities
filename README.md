@@ -36,7 +36,7 @@ Datapack that has string operations sort of.
 2. When the string is completely read the function in 'callback' is called and the score of 'callback string' is set to 'callbackID'. Both values are optional (see examples 3-4)
 3. Several strings can be handelled after each other with a queue by using Basic Step 1 and Step 2 several times after one another (see example 4)
 
-## Module - String Operations
+## Module - Strings/Substring
 ### Substring
 #### Instructions
 1. `data merge storage substring:in {string:["a","b","c"],start:0,length:2}` input
@@ -47,13 +47,17 @@ Datapack that has string operations sort of.
 6. Negative length is equal to (string length)+(length) (length=-1 for a 10 character string would be 9)
 7. The char array for this function can be generate using the Strings module and put into this module via a callback (see Examples 8 and 9)
 
-## Module - Unix
-#### Instructions
-1. Input unix timestamp in seconds: `scoreboard players set second sUnix 1575491054`
-2. Run `function unix:convert`
-3. Outputs as scores: Objective `sUnix` for players `day`, `month`, `year`, `hour`, `minute`, `second`, `weekday` (0 for Thursday, 6 for Wednesday)
-4. Outputs as CustomNames: month: `@e[type=minecraft:armor_stand,tag=month,tag=sUnix]`, weekday: `@e[type=minecraft:armor_stand,tag=weekday,tag=sUnix]`
-5. `function unix:display` shows the result
+## Module - Strings/Case
+*Explanation is coming soon*
+
+## Module - Dictionary
+*Module not final*
+
+## Module - Examples
+*Explanation is coming soon*
+
+## Module - Application/Name
+*Explanation is coming soon*
 
 ## Module - Base64
 #### Basic Instructions
@@ -83,6 +87,17 @@ Datapack that has string operations sort of.
 - Integrated with this module is a base(x) converter, instructions for its use can be found [here](https://github.com/gibbsly/fantastic-palm-tree)
 - The output of this is formatted in name/value pairs inside of an output array, the notation is `{Value:[],Type:"",Extra:[],Name:[]}` Minecraft itself orders the data like this, I do not have any control over how the data is ordered inside of the pair itself.
 - escape characters are avalible, you are going to want to escape any qotes (`"`) within the name or value entires. To enter a backslash (`\`) into a char array you need to use 2, so `"\\"`.
+
+## Module - Application/Cape
+*Explanation is coming soon*
+
+## Module - Application/Unix
+#### Instructions
+1. Input unix timestamp in seconds: `scoreboard players set second sUnix 1575491054`
+2. Run `function unix:convert`
+3. Outputs as scores: Objective `sUnix` for players `day`, `month`, `year`, `hour`, `minute`, `second`, `weekday` (0 for Thursday, 6 for Wednesday)
+4. Outputs as CustomNames: month: `@e[type=minecraft:armor_stand,tag=month,tag=sUnix]`, weekday: `@e[type=minecraft:armor_stand,tag=weekday,tag=sUnix]`
+5. `function unix:display` shows the result
 
 ## Credit
 
