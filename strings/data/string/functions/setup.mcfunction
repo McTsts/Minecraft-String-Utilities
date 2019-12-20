@@ -4,6 +4,7 @@ scoreboard players set 2 Const 2
 scoreboard players set total string 92
 scoreboard players set queue string 0
 scoreboard players set searching string -1
+scoreboard players set helper string -1
 gamerule commandBlockOutput false
 
 function string:run/reset
