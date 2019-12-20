@@ -107,11 +107,11 @@ Datapack that has string operations sort of.
 
 ###### Additional Credit:
 
-- Zonteek > Original concept for getting the timestamp
+- Zonteek > Original Concept (to get timestamp)
 - SirBenet > "a, b, c" tag step explanation
 - Onnowhere > /help step concept
 - Oskar > Asking about the /tag list bug
-- Misode > Recursive nbt for dictionary 
+- Misode > Recursive nbt for dictionary solution
 
 
 
