@@ -11,7 +11,7 @@ execute if score helper string matches 1 run schedule function example_string:_a
 
 ## 7
 # Places a callback after 6 to delay 7
-execute if score helper string matches 2 run data modify storage string:in input append value {string:"delay",callback:"function example_string:_helper",callbackID:1}
+execute if score helper string matches 2 run data modify storage string:in input append value {string:"delay",callback:{command:"function example_string:_helper",id:1}}
 execute if score helper string matches 2 run function string:do/read
 execute if score helper string matches 2 run scoreboard players set helperX string 3
 # Handles delay of 7
@@ -23,7 +23,7 @@ execute if score helper string matches 4 run schedule function example_string:_a
 
 ## 11
 # Places a callback after 10 to delay 11
-execute if score helper string matches 5 run data modify storage string:in input append value {string:"delay",callback:"function example_string:_helper",callbackID:1}
+execute if score helper string matches 5 run data modify storage string:in input append value {string:"delay",callback:{command:"function example_string:_helper",id:1}}
 execute if score helper string matches 5 run function string:do/read
 execute if score helper string matches 5 run scoreboard players set helperX string 6
 # Handles delay of 11
@@ -35,7 +35,7 @@ execute if score helper string matches 7 run schedule function example_string:_a
 
 ## Reset
 # Places a callback at the end for reset
-execute if score helper string matches 8 run data modify storage string:in input append value {string:"delay",callback:"function example_string:_helper",callbackID:1}
+execute if score helper string matches 8 run data modify storage string:in input append value {string:"delay",callback:{command:"function example_string:_helper",id:1}}
 execute if score helper string matches 8 run function string:do/read
 execute if score helper string matches 8 run scoreboard players set helperX string 9
 # Resets 

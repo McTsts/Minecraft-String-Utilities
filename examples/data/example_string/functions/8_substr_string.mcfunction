@@ -1,6 +1,6 @@
 execute unless score callback string matches 1.. run tellraw @a ["\n"]
 # String to Char Array
-data modify storage string:in input append value {string:"This is an example string!",callback:"function example_string:8_substr_string",callbackID:1}
+data modify storage string:in input append value {string:"This is an example string!",callback:{command:"function example_string:8_substr_string",id:1}}
 execute unless score callback string matches 1.. run tellraw @a ["[#08] Input: ",{"storage":"string:in","nbt":"input[-1].string","interpret":false}]
 function string:do/read
 
