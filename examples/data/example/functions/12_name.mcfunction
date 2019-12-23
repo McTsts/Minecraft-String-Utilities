@@ -1,13 +1,13 @@
 execute unless score callback string matches 0.. run tellraw @a ["\n"]
 # Get Name
 execute unless score callback string matches 1.. run data remove storage temp name
-execute unless score callback string matches 1.. as @a run loot replace entity @s weapon.mainhand loot example_skull:get/skull
-execute unless score callback string matches 1.. run data modify storage string:in temp set value {string:"",callback:{command:"function example_string:12_name",id:1}}
+execute unless score callback string matches 1.. as @a run loot replace entity @s weapon.mainhand loot example:get/skull
+execute unless score callback string matches 1.. run data modify storage string:in temp set value {string:"",callback:{command:"function example:12_name",id:1}}
 execute unless score callback string matches 1.. run data modify storage string:in temp.string set from entity @r SelectedItem.tag.SkullOwner.Name
 execute unless score callback string matches 1.. run replaceitem entity @a weapon.mainhand air
 execute unless score callback string matches 1.. run tellraw @a ["[#12] Input: ",{"storage":"string:in","nbt":"temp.string","interpret":false}]
 execute unless score callback string matches 1.. run data modify storage string:in input append from storage string:in temp
-function string:do/read
+function string:call
 
 execute if score callback string matches 1 run tellraw @a ["[#12] Char Array: ",{"storage":"string:out","nbt":"out","interpret":false}]
 

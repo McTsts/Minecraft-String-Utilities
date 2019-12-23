@@ -2,7 +2,7 @@
  "values": [
  "substring:setup",
  "regex:setup",
- "ntca:setup",
- "string:setup"
+ "ntca:load",
+ "string:load"
  ]
 }
