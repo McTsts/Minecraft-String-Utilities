@@ -12,13 +12,13 @@ Datapack that has string operations sort of.
 - [application/name](https://github.com/McTsts/Minecraft-String-Utilities#module---applicationname): Shortens names using a set of rules, for occasions where messages may require names below a certain length
 
 ###### Gibbs
-- [base64](https://github.com/McTsts/Minecraft-String-Utilities#module---base64): converts an array of base64 chars into an array of ascii chars (gibbs)
-- [parser](https://github.com/McTsts/Minecraft-String-Utilities#module---parser): parses an array of chars formatted as a json object into name/value pairs (gibbs)
+- [base64](https://github.com/McTsts/Minecraft-String-Utilities#module---base64): converts an array of base64 chars into an array of ascii chars 
+- [parser](https://github.com/McTsts/Minecraft-String-Utilities#module---parser): parses an array of chars formatted as a json object into name/value pairs 
 - [application/cape](https://github.com/McTsts/Minecraft-String-Utilities#module---applicationcape): Detects which cape (if any) a player has
 
 
 ###### Suso
-- [application/unix](https://github.com/McTsts/Minecraft-String-Utilities#module---applicationunix): Converts unix timestamps into dates/times (Suso)
+- [application/unix](https://github.com/McTsts/Minecraft-String-Utilities#module---applicationunix): Converts unix timestamps into dates/times 
 
 *More modules are in development*
 
@@ -84,11 +84,11 @@ Datapack that has string operations sort of.
 3. `/data get storage parse:main out` to read the output
 
 #### Numbers
-1. numbers longer than 9 digits are displayed in a specific way, for example the number `-3234567.8901` would be displayed as `[-1, 3, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 4]` and if it is not in an array it's type would be `"long_number"`
-2. the format for long numbers is `[p,n,d]` 
-- `p` is `-1` if the number is negitive, and `1` if it is positive
-- `n` is the digits in order
-- `d` is the position of the decimal point from the right
+1. numbers longer than 9 digits are displayed in a specific way, for example the number `-3234567.8901` would be displayed as `{pol:-1,num:[3, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1],dec:4,base:10}` and if it is not in an array it's type would be `"long_number"`
+2. the format for long numbers is `{pol:1/-1,num:[],dec:0,base:10}` 
+- `pol` is `-1` if the number is negitive, and `1` if it is positive
+- `num` is the digits in order
+- `dec` is the position of the decimal point from the right
 
 #### Other info
 - Integrated with this module is a base(x) converter, instructions for its use can be found [here](https://github.com/gibbsly/fantastic-palm-tree)
