@@ -2,6 +2,10 @@
 execute store result score start substring run data get storage substring:in start
 execute store result score length substring run data get storage substring:in length
 execute store result score curLength substring run data get storage substring:in string
+# Handle entire word
+execute if score length substring matches 0 run scoreboard players operation temp substring = curLength substring
+execute if score length substring matches 0 run scoreboard players operation temp substring -= start substring
+execute if score length substring matches 0 run scoreboard players operation length substring = temp substring
 # Handle Negative Values
 execute if score start substring matches ..-1 run scoreboard players operation temp substring = curLength substring
 execute if score start substring matches ..-1 run scoreboard players operation temp substring += start substring

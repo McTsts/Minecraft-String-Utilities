@@ -10,4 +10,5 @@ function string:do/read
 # Output if in Callback
 execute if score callback string matches 1 run data modify storage parse:in in set from storage string:out out
 execute if score callback string matches 1 run function parser:call
+execute if score callback string matches 1 run tellraw @a {"nbt":"out","storage":"string:out"}
 execute if score callback string matches 1 run tellraw @a {"nbt":"out[{Name:[\"main\"]}].Value[{Name:[\"t\",\"e\",\"x\",\"t\"]}].Value","storage":"parse:main","interpret":true}

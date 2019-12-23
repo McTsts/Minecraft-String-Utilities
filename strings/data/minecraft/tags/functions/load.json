@@ -1,6 +1,8 @@
 {
  "values": [
  "substring:setup",
+ "regex:setup",
+ "ntca:setup",
  "string:setup"
  ]
 }
