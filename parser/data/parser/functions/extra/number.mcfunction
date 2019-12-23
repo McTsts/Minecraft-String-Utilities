@@ -13,5 +13,6 @@ execute if score dec= parse.main matches 0.. run function parser:extra/add_dec_p
 #flattens number if possible and copies it to pair
 function parser:extra/num_check
 
-#clearing array
+#clearing array/object
 data modify storage parse:main temp.array set value []
+data modify storage parse:main temp.obj set value {}

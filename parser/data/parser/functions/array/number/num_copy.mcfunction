@@ -15,6 +15,7 @@ execute if score dec= parse.main matches 0.. run function parser:array/number/ad
 
 #flattening number if possible
 execute unless data storage parse:list temp_val[11] run function parser:array/number/flatten
+execute if data storage parse:list temp_val[11] run function parser:array/number/convert
 
 #copying number array to value list
 data modify storage parse:list Value.List append from storage parse:list temp_val
