@@ -3,21 +3,21 @@ Datapack that has string operations sort of.
 
 ## Modules
 ###### Ts
-- [strings](https://github.com/McTsts/Minecraft-String-Utilities/blob/master/README.md#module---strings): Reads strings into char arrays
-- [strings/substring](https://github.com/McTsts/Minecraft-String-Utilities/blob/master/README.md#module---stringssubstring): Can create "substrings" of char arrays
-- [strings/case](https://github.com/McTsts/Minecraft-String-Utilities/blob/master/README.md#module---stringscase): Has to lower, to upper case and get case functions
-- *[dictionary](https://github.com/McTsts/Minecraft-String-Utilities/blob/master/README.md#module---dictionary): WIP part for a tts module*
-- [examples](https://github.com/McTsts/Minecraft-String-Utilities/blob/master/README.md#module---examples): Has some example functions (Ts)
-- [application/name](https://github.com/McTsts/Minecraft-String-Utilities/blob/master/README.md#module---applicationname): Shortens names using a set of rules, for occasions where messages may require names below a certain length
+- [strings](https://github.com/McTsts/Minecraft-String-Utilities#module---strings): Reads strings into char arrays
+- [strings/substring](https://github.com/McTsts/Minecraft-String-Utilities#module---stringssubstring): Can create "substrings" of char arrays
+- [strings/case](https://github.com/McTsts/Minecraft-String-Utilities#module---stringscase): Has to lower, to upper case and get case functions
+- *[dictionary](https://github.com/McTsts/Minecraft-String-Utilities#module---dictionary): WIP part for a tts module*
+- [examples](https://github.com/McTsts/Minecraft-String-Utilities#module---examples): Has some example functions (Ts)
+- [application/name](https://github.com/McTsts/Minecraft-String-Utilities#module---applicationname): Shortens names using a set of rules, for occasions where messages may require names below a certain length
 
 ###### Gibbs
-- [base64](https://github.com/McTsts/Minecraft-String-Utilities/blob/master/README.md#module---base64): converts an array of base64 chars into an array of ascii chars (gibbs)
-- [parser](https://github.com/McTsts/Minecraft-String-Utilities/blob/master/README.md#module---parser): parses an array of chars formatted as a json object into name/value pairs (gibbs)
-- [application/cape](https://github.com/McTsts/Minecraft-String-Utilities/blob/master/README.md#module---applicationcape): Detects which cape (if any) a player has
+- [base64](https://github.com/McTsts/Minecraft-String-Utilities#module---base64): converts an array of base64 chars into an array of ascii chars (gibbs)
+- [parser](https://github.com/McTsts/Minecraft-String-Utilities#module---parser): parses an array of chars formatted as a json object into name/value pairs (gibbs)
+- [application/cape](https://github.com/McTsts/Minecraft-String-Utilities#module---applicationcape): Detects which cape (if any) a player has
 
 
 ###### Suso
-- [application/unix](https://github.com/McTsts/Minecraft-String-Utilities/blob/master/README.md#module---applicationunix): Converts unix timestamps into dates/times (Suso)
+- [application/unix](https://github.com/McTsts/Minecraft-String-Utilities#module---applicationunix): Converts unix timestamps into dates/times (Suso)
 
 *More modules are in development*
 
@@ -35,6 +35,9 @@ Datapack that has string operations sort of.
 ###### Async
 1. Replacement for Step 1: `data modify storage string:in input append value {string:"abcde",async:{iterations:10}}`
 2. After 'async.iterations' iterations the module stops processing and continues in the next tick. Can be combined with callbacks and the callback will be called once the entire string has been processed.
+###### Parallel
+1. Replacement for Step 1: `data modify storage string:in input append value {string:"abcde",async:{iterations:10,parallel:1}}`
+2. After 'async.iterations' iterations the module stops processing and continues in the next tick. The callback is called every tick with everything found in that tick, as well as once at the end with the entire string. This allows parallely already doing something with the start of the string while the rest of the string is still parsing.
 
 ## Module - Strings/Substring
 ### Substring
@@ -116,6 +119,3 @@ Datapack that has string operations sort of.
 - Onnowhere > /help step concept
 - Oskar > Asking about the /tag list bug
 - Misode > Recursive nbt for dictionary solution
-
-
-
