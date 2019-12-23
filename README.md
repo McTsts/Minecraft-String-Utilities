@@ -6,7 +6,7 @@ Datapack that has string operations sort of.
 - [strings](https://github.com/McTsts/Minecraft-String-Utilities#module---strings): Reads strings into char arrays
 - [strings/substring](https://github.com/McTsts/Minecraft-String-Utilities#module---stringssubstring): Can create "substrings" of char arrays
 - [strings/case](https://github.com/McTsts/Minecraft-String-Utilities#module---stringscase): Has to lower, to upper case and get case functions
-- [string/ntca](https://github.com/McTsts/Minecraft-String-Utilities#module---ntca): Converts a number into a char array
+- [strings/ntca](https://github.com/McTsts/Minecraft-String-Utilities#module---ntca): Converts a number into a char array
 - *[dictionary](https://github.com/McTsts/Minecraft-String-Utilities#module---dictionary): WIP part for a tts module*
 - [examples](https://github.com/McTsts/Minecraft-String-Utilities#module---examples): Has some example functions (Ts)
 - [application/name](https://github.com/McTsts/Minecraft-String-Utilities#module---applicationname): Shortens names using a set of rules, for occasions where messages may require names below a certain length
