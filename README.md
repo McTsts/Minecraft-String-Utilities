@@ -25,7 +25,7 @@ Datapack that has string operations sort of.
 ## Module - Strings
 #### Basic Instructions
 1. `data modify storage string:in input append value {string:"abcde"}` to put in a string
-2. `function string:do/read` to read the string
+2. `function string:call` to read the string
 3. `data get storage string:out out` to get the char array
 
 #### Advanced Instructions
