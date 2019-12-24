@@ -1,6 +1,10 @@
 # Strings
 Datapack that has string operations sort of.
 
+Here's an explanation of *how* this works: 
+https://docs.google.com/document/d/15Va-tUmoMhrajIbZFhZNWKGKYWvWQMv4spxkHr877ps
+
+
 ## Modules
 ###### Ts
 - [strings](https://github.com/McTsts/Minecraft-String-Utilities#module---strings): Reads strings into char arrays
