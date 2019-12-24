@@ -7,8 +7,8 @@ function string:call
 
 # Substring once String is a char array
 execute if score callback string matches 1 run tellraw @a ["[#08] Char Array: ",{"storage":"string:out","nbt":"out","interpret":false}]
-execute if score callback string matches 1 run data merge storage substring:in {start:7,length:8}
-execute if score callback string matches 1 run data modify storage substring:in string set from storage string:out out
-execute if score callback string matches 1 run function substring:do/start
-execute if score callback string matches 1 run tellraw @a ["[#08] Output: ",{"storage":"substring:out","nbt":"string","interpret":false}]
-execute if score callback string matches 1 run tellraw @a ["[#08] Substr: ",{"storage":"substring:out","nbt":"string","interpret":true}]
+execute if score callback string matches 1 run data merge storage substring:io {in:{start:7,length:8}}
+execute if score callback string matches 1 run data modify storage substring:io in.string set from storage string:out out
+execute if score callback string matches 1 run function substring:call
+execute if score callback string matches 1 run tellraw @a ["[#08] Output: ",{"storage":"substring:io","nbt":"out","interpret":false}]
+execute if score callback string matches 1 run tellraw @a ["[#08] Substr: ",{"storage":"substring:io","nbt":"out","interpret":true}]

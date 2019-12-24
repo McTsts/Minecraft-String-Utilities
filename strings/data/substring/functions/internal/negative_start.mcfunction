@@ -1,0 +1,1 @@
+scoreboard players operation $start substring += $curLength substring

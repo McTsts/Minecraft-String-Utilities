@@ -1,7 +1,7 @@
 {
  "values": [
- "substring:setup",
- "regex:setup",
+ "substring:load",
+ "regex:load",
  "ntca:load",
  "string:load"
  ]
