@@ -6,10 +6,8 @@ data modify storage parse:in in set from storage ascii:main text
 function parser:call
 
 #sets up to do unix conversion
-data modify storage rev_conv:main in set from storage parse:main out[{Name:["main"]}].Value[{Name:[t,i,m,e,s,t,a,m,p]}].Value
+data modify storage rev_conv:main in set from storage parse:main out[{Name:["main"]}].Value[{Name:[t,i,m,e,s,t,a,m,p]}].Value.num
 
-data remove storage rev_conv:main in[0]
-data remove storage rev_conv:main in[-1]
 data remove storage rev_conv:main in[-1]
 data remove storage rev_conv:main in[-1]
 data remove storage rev_conv:main in[-1]
