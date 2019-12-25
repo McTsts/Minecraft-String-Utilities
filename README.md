@@ -76,10 +76,9 @@ https://docs.google.com/document/d/15Va-tUmoMhrajIbZFhZNWKGKYWvWQMv4spxkHr877ps
 
 ## Module - Base64
 #### Basic Instructions
-1. `/data modify storage base64:in string set value ["S", "G", "V", "s", "b", "G", "8", "g", "V", "2", "9", "y", "b", "G", "Q", "h"]`
-2. `/function base64:convert`
-3. `/data get storage ascii:main text` to read the output
-3. `/function print:tellraw` gives a plaintext readout of the output array
+1. `/data modify storage base64:io in set value ["S", "G", "V", "s", "b", "G", "8", "g", "V", "2", "9", "y", "b", "G", "Q", "h"]`
+2. `/function base64:call`
+3. `/data get base64:io out` to read the output
 
 #### Other Instructions
 - `/function base64:call` will copy the array of characters from the output array of the strings module, then convert them. (Good for converting player skull data)
@@ -87,9 +86,9 @@ https://docs.google.com/document/d/15Va-tUmoMhrajIbZFhZNWKGKYWvWQMv4spxkHr877ps
 
 ## Module - Parser
 #### Basic Instructions
-1. `/data modify storage parse:in in set value ["{",'"',"a",'"',":",'"',"b",'"',"}"]`
+1. `/data modify storage parse:io in set value ["{",'"',"a",'"',":",'"',"b",'"',"}"]`
 2. `/function parser:call`
-3. `/data get storage parse:main out` to read the output
+3. `/data get storage parse:io out` to read the output
 
 #### Numbers
 1. numbers longer than 9 digits are displayed in a specific way, for example the number `-3234567.8901` would be displayed as `{pol:-1,num:[3, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1],dec:4,base:10}` and if it is not in an array it's type would be `"long_number"`
