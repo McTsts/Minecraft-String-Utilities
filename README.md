@@ -10,8 +10,8 @@ https://docs.google.com/document/d/15Va-tUmoMhrajIbZFhZNWKGKYWvWQMv4spxkHr877ps
 - [strings](https://github.com/McTsts/Minecraft-String-Utilities#module---strings): Reads strings into char arrays
 - [strings/substring](https://github.com/McTsts/Minecraft-String-Utilities#module---stringssubstring): Can create "substrings" of char arrays
 - [strings/case](https://github.com/McTsts/Minecraft-String-Utilities#module---stringscase): Has to lower, to upper case and get case functions
-- [strings/ntca](https://github.com/McTsts/Minecraft-String-Utilities#module---ntca): Converts a number into a char array
-- *[strings/regex](https://github.com/McTsts/Minecraft-String-Utilities#module---regex): WIP part for a regex module*
+- [strings/ntca](https://github.com/McTsts/Minecraft-String-Utilities#module---stringsntca): Converts a number into a char array
+- *[strings/regex](https://github.com/McTsts/Minecraft-String-Utilities#module---stringsregex): WIP part for a regex module*
 - *[dictionary](https://github.com/McTsts/Minecraft-String-Utilities#module---dictionary): WIP part for a tts module*
 - [examples](https://github.com/McTsts/Minecraft-String-Utilities#module---examples): Has some example functions (Ts)
 - [application/name](https://github.com/McTsts/Minecraft-String-Utilities#module---applicationname): Shortens names using a set of rules, for occasions where messages may require names below a certain length
@@ -28,6 +28,9 @@ https://docs.google.com/document/d/15Va-tUmoMhrajIbZFhZNWKGKYWvWQMv4spxkHr877ps
 *More modules are in development*
 
 ## Module - Strings
+#### Explanation
+Converts a String into a Char Array.
+
 #### Basic Instructions
 1. `data modify storage string:io queue append value {string:"abcde"}` to put in a string
 2. `function string:call` to read the string
@@ -46,7 +49,6 @@ https://docs.google.com/document/d/15Va-tUmoMhrajIbZFhZNWKGKYWvWQMv4spxkHr877ps
 2. After 'async.iterations' iterations the module stops processing and continues in the next tick. The callback is called every tick with everything found in that tick, as well as once at the end with the entire string. This allows parallely already doing something with the start of the string while the rest of the string is still parsing.
 
 ## Module - Strings/Substring
-### Substring
 #### Instructions
 1. `data merge storage substring:io {in:{string:["a","b","c"],start:0,length:2}}` input
 2. `function substring:call` to execute
@@ -60,7 +62,13 @@ https://docs.google.com/document/d/15Va-tUmoMhrajIbZFhZNWKGKYWvWQMv4spxkHr877ps
 *Explanation is coming soon*
 
 ## Module - Strings/NTCA
-*Explanation is coming soon*
+#### Explanation
+Converts a Number into a Char Array.
+
+#### Instructions
+1. `data modify storage ntca:io in set value 1314` to input
+2. `function ntca:call` to run 
+3. `data get storage ntca:io out` to get output
 
 ## Module - Strings/Regex
 *Module not final*
