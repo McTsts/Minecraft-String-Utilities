@@ -1,0 +1,10 @@
+execute if data storage regex:main {cur_char:"0"} run scoreboard players set success regex 0
+execute if data storage regex:main {cur_char:"1"} run scoreboard players set success regex 0
+execute if data storage regex:main {cur_char:"2"} run scoreboard players set success regex 0
+execute if data storage regex:main {cur_char:"3"} run scoreboard players set success regex 0
+execute if data storage regex:main {cur_char:"4"} run scoreboard players set success regex 0
+execute if data storage regex:main {cur_char:"5"} run scoreboard players set success regex 0
+execute if data storage regex:main {cur_char:"6"} run scoreboard players set success regex 0
+execute if data storage regex:main {cur_char:"7"} run scoreboard players set success regex 0
+execute if data storage regex:main {cur_char:"8"} run scoreboard players set success regex 0
+execute if data storage regex:main {cur_char:"9"} run scoreboard players set success regex 0

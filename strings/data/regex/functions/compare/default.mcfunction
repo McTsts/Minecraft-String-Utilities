@@ -1,0 +1,2 @@
+data modify storage regex:main cur_char_c set from storage regex:main cur_char
+execute store success score success regex run data modify storage regex:main cur_char_c set from storage regex:main cur_regex_char

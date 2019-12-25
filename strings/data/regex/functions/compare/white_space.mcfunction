@@ -1,0 +1,1 @@
+execute if data storage regex:main {cur_char:" "} run scoreboard players set success regex 0
