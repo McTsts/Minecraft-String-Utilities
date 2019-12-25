@@ -11,6 +11,7 @@ https://docs.google.com/document/d/15Va-tUmoMhrajIbZFhZNWKGKYWvWQMv4spxkHr877ps
 - [strings/substring](https://github.com/McTsts/Minecraft-String-Utilities#module---stringssubstring): Can create "substrings" of char arrays
 - [strings/case](https://github.com/McTsts/Minecraft-String-Utilities#module---stringscase): Has to lower, to upper case and get case functions
 - [strings/ntca](https://github.com/McTsts/Minecraft-String-Utilities#module---ntca): Converts a number into a char array
+- *[strings/regex](https://github.com/McTsts/Minecraft-String-Utilities#module---regex): WIP part for a regex module*
 - *[dictionary](https://github.com/McTsts/Minecraft-String-Utilities#module---dictionary): WIP part for a tts module*
 - [examples](https://github.com/McTsts/Minecraft-String-Utilities#module---examples): Has some example functions (Ts)
 - [application/name](https://github.com/McTsts/Minecraft-String-Utilities#module---applicationname): Shortens names using a set of rules, for occasions where messages may require names below a certain length
@@ -28,28 +29,28 @@ https://docs.google.com/document/d/15Va-tUmoMhrajIbZFhZNWKGKYWvWQMv4spxkHr877ps
 
 ## Module - Strings
 #### Basic Instructions
-1. `data modify storage string:in input append value {string:"abcde"}` to put in a string
+1. `data modify storage string:io queue append value {string:"abcde"}` to put in a string
 2. `function string:call` to read the string
-3. `data get storage string:out out` to get the char array
+3. `data get storage string:io out` to get the char array
 
 #### Advanced Instructions
 ###### Callback
-1. Replacement for Step 1: `data modify storage string:in input append value {string:"abcde",callback:{command:"function example:test",id:1}}`
+1. Replacement for Step 1: `data modify storage string:io queue append value {string:"abcde",callback:{command:"function example:test",id:1}}`
 2. When the string is completely read the function in 'callback.command' is called and the score of 'callback string' is set to 'callback.id'. Both values are optional (see examples 3-4)
 3. Several strings can be handelled after each other with a queue by using Basic Step 1 and Step 2 several times after one another (see example 4)
 ###### Async
-1. Replacement for Step 1: `data modify storage string:in input append value {string:"abcde",async:{iterations:10}}`
+1. Replacement for Step 1: `data modify storage string:io queue append value {string:"abcde",async:{iterations:10}}`
 2. After 'async.iterations' iterations the module stops processing and continues in the next tick. Can be combined with callbacks and the callback will be called once the entire string has been processed.
 ###### Parallel
-1. Replacement for Step 1: `data modify storage string:in input append value {string:"abcde",async:{iterations:10,parallel:1}}`
+1. Replacement for Step 1: `data modify storage string:io queue append value {string:"abcde",async:{iterations:10,parallel:1}}`
 2. After 'async.iterations' iterations the module stops processing and continues in the next tick. The callback is called every tick with everything found in that tick, as well as once at the end with the entire string. This allows parallely already doing something with the start of the string while the rest of the string is still parsing.
 
 ## Module - Strings/Substring
 ### Substring
 #### Instructions
-1. `data merge storage substring:in {string:["a","b","c"],start:0,length:2}` input
-2. `function substring:do/start` to execute
-3. `data get storage substring:out string` to get a char array of the substring
+1. `data merge storage substring:io {in:{string:["a","b","c"],start:0,length:2}}` input
+2. `function substring:call` to execute
+3. `data get storage substring:io out` to get a char array of the substring
 4. Start determines where the substring starts, length determines how long it is
 5. Negative start, starts counting from the end instead (start=-1 starts at the last character)
 6. Negative length is equal to (string length)+(length) (length=-1 for a 10 character string would be 9)
@@ -60,6 +61,9 @@ https://docs.google.com/document/d/15Va-tUmoMhrajIbZFhZNWKGKYWvWQMv4spxkHr877ps
 
 ## Module - Strings/NTCA
 *Explanation is coming soon*
+
+## Module - Strings/Regex
+*Module not final*
 
 ## Module - Dictionary
 *Module not final*
