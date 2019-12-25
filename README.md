@@ -81,7 +81,6 @@ https://docs.google.com/document/d/15Va-tUmoMhrajIbZFhZNWKGKYWvWQMv4spxkHr877ps
 3. `/data get base64:io out` to read the output
 
 #### Other Instructions
-- `/function base64:call` will copy the array of characters from the output array of the strings module, then convert them. (Good for converting player skull data)
 - `/function print:call` converts an array of bytes in the `storage ascii:main bytes` into ascii characters (ascii values 32 to 126)
 
 ## Module - Parser
