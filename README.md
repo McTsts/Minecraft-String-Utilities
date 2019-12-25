@@ -112,6 +112,34 @@ https://docs.google.com/document/d/15Va-tUmoMhrajIbZFhZNWKGKYWvWQMv4spxkHr877ps
 4. Outputs as CustomNames: month: `@e[type=minecraft:armor_stand,tag=month,tag=aplication_unix]`, weekday: `@e[type=minecraft:armor_stand,tag=weekday,tag=aplication_unix]`
 5. `function aplication_unix:print` shows the result
 
+## Conventions
+
+#### Storage
+`<module>:io in` Input (data modify set)
+`<module>:io queue` Input Queue (data modify append/prepend/insert)
+*either use in or queue*  *(required)*
+`<module>:io out` Output *(required)*
+
+#### Functions
+`<module>:call` Runs the module *(required)*
+alternatively if a module provides several operations: `<module>:call/<operation>` can be used
+`<module>:callio` Copies `universal:strings io` into `<module>:io in` and then runs `<module>:call`, then copies `<module>:io out` to `universal:strings io` 
+`<module>:load` Function called by load tag
+`<module>:tick` Function called by tick tag
+
+#### Naming
+Tags, Objectives, Team, etc should follow this format (if possible): `<module>` or `<module>.text`
+Fake player names should be invalid. e.g.: `#<name>`, `$<name>`, `<name>=`
+
+#### Types
+String -> `"abc"`
+Char -> `"a"`
+Char Array -> `["a","b","c"]`
+Number -> `123`
+Number Array -> `[1,2,3]`
+Complex Number -> `{dec:0,num:[1,2,3],pol:1,base:10}`
+Complex Number Array -> `[{dec:0,num:[1],pol:1,base:10},{dec:0,num:[2],pol:1,base:10},{dec:0,num:[3],pol:1,base:10}]`
+
 ## Credit
 
 ##### Made by:
