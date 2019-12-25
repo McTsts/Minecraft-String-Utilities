@@ -1,7 +1,7 @@
-scoreboard players reset callback string
+scoreboard players reset $callback string
 
 # Queue empty
-execute unless data storage string:internal queue[0] run scoreboard players set searching string -1
+execute unless data storage string:internal queue[0] run scoreboard players set $searching string -1
 
 # Queue not empty
 execute if data storage string:internal queue[0] run data modify storage string:in string set from storage string:internal queue[0].string

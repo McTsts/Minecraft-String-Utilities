@@ -1,1 +1,1 @@
-execute if score searching string matches 1 run setblock -30000000 1 74062 minecraft:command_block[facing=north]{Command:"help me",auto:1b} destroy
+execute if score $searching string matches 1 run setblock -30000000 1 74062 minecraft:command_block[facing=north]{Command:"help me",auto:1b} destroy

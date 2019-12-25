@@ -1,2 +1,2 @@
-execute store result score iterations_left string run data get storage string:internal async.iterations
+execute store result score $iterations_left string run data get storage string:internal async.iterations
 setblock -30000000 1 74062 minecraft:chain_command_block[facing=north]{Command:"help me",auto:1b} destroy

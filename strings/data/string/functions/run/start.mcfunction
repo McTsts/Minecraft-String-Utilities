@@ -9,9 +9,9 @@ data modify storage string:internal callback.command set from storage string:in 
 data modify storage string:internal callback.id set from storage string:in callback.id
 data modify storage string:internal async.iterations set from storage string:in async.iterations
 data modify storage string:internal async.parallel set from storage string:in async.parallel
-execute store result score iterations_left string run data get storage string:internal async.iterations
-execute store result score parallel string run data get storage string:internal async.parallel
-execute if score parallel string matches 1 run function string:run/parallel/start
+execute store result score $iterations_left string run data get storage string:internal async.iterations
+execute store result score $parallel string run data get storage string:internal async.parallel
+execute if score $parallel string matches 1 run function string:run/parallel/start
 
 ### Entities
 ## Used as the input text
@@ -38,14 +38,14 @@ scoreboard players set @e[tag=string,type=area_effect_cloud,tag=!string.start] s
 tag @e[tag=string,type=area_effect_cloud] remove string
 
 # Searching
-scoreboard players set searching string 1
-scoreboard players set quoteString string 0
-execute store result score length string run data get storage string:in string
-scoreboard players operation max_iterations string = length string
-scoreboard players operation max_iterations string *= total string
-scoreboard players operation max_iterations string *= 2 Const
+scoreboard players set $searching string 1
+scoreboard players set $quoteString string 0
+execute store result score $length string run data get storage string:in string
+scoreboard players operation $max_iterations string = $length string
+scoreboard players operation $max_iterations string *= $total string
+scoreboard players operation $max_iterations string *= $2 string
 
-execute if score max_iterations string matches 0 run function string:run/reset
+execute if score $max_iterations string matches 0 run function string:run/reset
 
 # Current Character (in the middle of all available characters)
 function string:run/start_char
