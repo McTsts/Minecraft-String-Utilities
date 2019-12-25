@@ -1,6 +1,6 @@
 # Reset Values
 data modify storage simplify:main out set value []
-data modify storage simplify:main in set from storage string:out out
+data modify storage simplify:main in set from storage string:io out
 scoreboard players reset * string.simplify
 
 # Attempty Direct

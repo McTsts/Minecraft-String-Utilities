@@ -14,6 +14,6 @@ data merge storage string:internal {string:[],out:[],char:"",queue:[],async:{ite
 
 forceload remove -30000000 74048
 forceload add -30000000 74048
-execute positioned -30000000 1 74063 unless score $loaded string matches 3 run function string:helper/build
+execute positioned -30000000 1 74063 unless score $loaded string matches 4 run function string:helper/build
 execute positioned -30000000 1 74063 unless block ~ ~ ~ command_block run function string:helper/build
-scoreboard players set $loaded string 3
+scoreboard players set $loaded string 4

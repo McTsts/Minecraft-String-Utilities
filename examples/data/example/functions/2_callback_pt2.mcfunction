@@ -1,1 +1,1 @@
-tellraw @a ["[#02] ",{"storage":"string:out","nbt":"out","interpret":false}]
+tellraw @a ["[#02] ",{"storage":"string:io","nbt":"out","interpret":false}]
