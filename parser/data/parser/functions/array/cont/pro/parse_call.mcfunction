@@ -5,7 +5,7 @@ data remove storage parse:hold list[0].temp_list[0]
 scoreboard players add level= parse.main 1
 
 #calling parser
-function parser:call
+function parser:call_int
 
 scoreboard players remove level= parse.main 1
 
