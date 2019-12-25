@@ -7,8 +7,8 @@ scoreboard players reset * string.simplify
 function application_name:internal/direct_translation
 
 # Start
-execute unless score directTrans string.simplify matches 1 run function application_name:internal/simplify_start
-scoreboard players reset directTrans string.simplify
+execute unless score $directTrans string.simplify matches 1 run function application_name:internal/simplify_start
+scoreboard players reset $directTrans string.simplify
 
 # Store
 replaceitem block -30000000 10 74063 container.0 minecraft:name_tag
