@@ -10,4 +10,4 @@ execute if data storage simplify:main {char:"_"} run data modify storage case:io
 execute if data storage simplify:main {char:"_"} run function case:call/to_upper
 execute if data storage simplify:main {char:"_"} run data modify storage simplify:main in[0] set from storage case:io out
 execute if data storage simplify:main {char:"_"} run data remove storage simplify:main char
-execute unless data storage simplify:main char if data storage simplify:main in[0] run function application_name:next_char
+execute unless data storage simplify:main char if data storage simplify:main in[0] run function application_name:internal/next_char

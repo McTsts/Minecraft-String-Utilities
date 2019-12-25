@@ -12,4 +12,4 @@ execute if data storage simplify:main {temp:"T"} run scoreboard players add the 
 
 # Remove Last Char
 execute unless score the string.simplify matches 3 run data remove storage simplify:main out[-1]
-execute unless score the string.simplify matches 3 run function application_name:end_name
+execute unless score the string.simplify matches 3 run function application_name:internal/end_name

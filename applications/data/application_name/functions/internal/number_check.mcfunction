@@ -10,5 +10,5 @@ execute if data storage simplify:main {char:"6"} run data remove storage simplif
 execute if data storage simplify:main {char:"7"} run data remove storage simplify:main char
 execute if data storage simplify:main {char:"8"} run data remove storage simplify:main char
 execute if data storage simplify:main {char:"9"} run data remove storage simplify:main char
-execute unless data storage simplify:main char unless data storage simplify:main temp[0] run function application_name:end_name
-execute unless data storage simplify:main char if data storage simplify:main temp[0] run function application_name:number_check
+execute unless data storage simplify:main char unless data storage simplify:main temp[0] run function application_name:internal/end_name
+execute unless data storage simplify:main char if data storage simplify:main temp[0] run function application_name:internal/number_check
