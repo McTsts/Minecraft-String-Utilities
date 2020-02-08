@@ -47,6 +47,12 @@ Converts a String into a Char Array.
 ###### Parallel
 1. Replacement for Step 1: `data modify storage string:io queue append value {string:"abcde",async:{iterations:10,parallel:1}}`
 2. After 'async.iterations' iterations the module stops processing and continues in the next tick. The callback is called every tick with everything found in that tick, as well as once at the end with the entire string. This allows parallely already doing something with the start of the string while the rest of the string is still parsing.
+###### Known Output
+1. Replacement for Step 1: `data modify storage string:io queue append value {string:"test:abcde",ignore:"test:"}`
+2. The string provided in 'ignore' will be skipped when constructing the comparison string.
+###### Character Limit
+1. Replacement for Step 1: `data modify storage string:io queue append value {string:"abcdetest",maxchars:5}`
+2. After 'maxchars' chars have been found, the search will be interrupted.
 
 ## Module - Strings/Substring
 #### Instructions
