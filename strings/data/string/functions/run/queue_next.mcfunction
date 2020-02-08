@@ -9,4 +9,6 @@ execute if data storage string:internal queue[0] run data modify storage string:
 execute if data storage string:internal queue[0] run data modify storage string:in callback.id set from storage string:internal queue[0].callback.id
 execute if data storage string:internal queue[0] run data modify storage string:in async.iterations set from storage string:internal queue[0].async.iterations
 execute if data storage string:internal queue[0] run data modify storage string:in async.parallel set from storage string:internal queue[0].async.parallel
+execute if data storage string:internal queue[0] run data modify storage string:in ignore set from storage string:in in.ignore
+execute if data storage string:internal queue[0] store result score $maxchars string run data get storage string:in in.maxchars
 execute if data storage string:internal queue[0] run function string:run/run

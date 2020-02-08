@@ -1,5 +1,5 @@
 # Find final character
-function string:run/compare_found_one
+execute unless score $found string = $maxchars string run function string:run/compare_found_one
 
 # Fix Quote String
 execute if score $quoteString string matches 2 run data remove storage string:internal out[-1]
