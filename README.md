@@ -39,7 +39,7 @@ Converts a String into a Char Array.
 #### Advanced Instructions
 ###### Callback
 1. Replacement for Step 1: `data modify storage string:io queue append value {string:"abcde",callback:{command:"function example:test",id:1}}`
-2. When the string is completely read the function in 'callback.command' is called and the score of 'callback string' is set to 'callback.id'. Both values are optional (see examples 3-4)
+2. When the string is completely read the function in 'callback.command' is called and the score of '$callback string' is set to 'callback.id'. Both values are optional (see examples 3-4)
 3. Several strings can be handelled after each other with a queue by using Basic Step 1 and Step 2 several times after one another (see example 4)
 ###### Async
 1. Replacement for Step 1: `data modify storage string:io queue append value {string:"abcde",async:{iterations:10}}`
