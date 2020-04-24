@@ -50,7 +50,7 @@ execute if score $day application_unix matches 304..333 run scoreboard players o
 execute if score $day application_unix matches 334.. run scoreboard players set $month application_unix 12
 execute if score $day application_unix matches 334.. run scoreboard players operation $day application_unix -= $334 application_unix
 
-execute if score $temp application_unix matches 0 run scoreboard players operation $day application_unix += $1 application_unix
+execute if score $temp application_unix matches 0 if score $month application_unix matches 2 run scoreboard players operation $day application_unix += $1 application_unix
 scoreboard players operation $day application_unix += $1 application_unix
 
 #Get hour
