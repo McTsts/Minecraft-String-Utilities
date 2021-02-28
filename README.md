@@ -1,5 +1,5 @@
-# Strings
-Datapack that has string operations sort of.
+# String Parsing
+Datapacks that implement string parsing and various related functionalities.
 
 Here's an explanation of *how* this works: 
 https://docs.google.com/document/d/15Va-tUmoMhrajIbZFhZNWKGKYWvWQMv4spxkHr877ps
@@ -7,15 +7,20 @@ https://docs.google.com/document/d/15Va-tUmoMhrajIbZFhZNWKGKYWvWQMv4spxkHr877ps
 
 ## Modules
 ###### Ts
-- [strings](https://github.com/McTsts/Minecraft-String-Utilities#module---strings): Reads strings into char arrays
+If you're looking for just string parsing this the thing you'll need:
+- [strings](https://github.com/McTsts/Minecraft-String-Utilities#module---strings): Reads strings into char arrays - STRING PARSING
+It's recommended to also look at this one for examples:
+- [examples](https://github.com/McTsts/Minecraft-String-Utilities#module---examples): Has some example functions (Ts)
+
+These namespaces aren't relevant for string parsing directly - they're usages for it (these are used by the examples datapack):
 - [strings/substring](https://github.com/McTsts/Minecraft-String-Utilities#module---stringssubstring): Can create "substrings" of char arrays
 - [strings/case](https://github.com/McTsts/Minecraft-String-Utilities#module---stringscase): Has to lower, to upper case and get case functions
 - [strings/ntca](https://github.com/McTsts/Minecraft-String-Utilities#module---stringsntca): Converts a number into a char array
 - *[strings/regex](https://github.com/McTsts/Minecraft-String-Utilities#module---stringsregex): WIP part for a regex module*
-- [examples](https://github.com/McTsts/Minecraft-String-Utilities#module---examples): Has some example functions (Ts)
 - [application/name](https://github.com/McTsts/Minecraft-String-Utilities#module---applicationname): Shortens names using a set of rules, for occasions where messages may require names below a certain length
 
 ###### Gibbs
+These packs are useful when you're trying to do string parsing with skulls:
 - [base64](https://github.com/McTsts/Minecraft-String-Utilities#module---base64): converts an array of base64 chars into an array of ascii chars 
 - [parser](https://github.com/McTsts/Minecraft-String-Utilities#module---parser): parses an array of chars formatted as a json object into name/value pairs 
 - [application/cape](https://github.com/McTsts/Minecraft-String-Utilities#module---applicationcape): Detects which cape (if any) a player has
@@ -24,7 +29,6 @@ https://docs.google.com/document/d/15Va-tUmoMhrajIbZFhZNWKGKYWvWQMv4spxkHr877ps
 ###### Suso
 - [application/unix](https://github.com/McTsts/Minecraft-String-Utilities#module---applicationunix): Converts unix timestamps into dates/times 
 
-*More modules are in development*
 
 ## Module - Strings
 #### Explanation
@@ -64,7 +68,7 @@ Converts a String into a Char Array.
 7. The char array for this function can be generate using the Strings module and put into this module via a callback (see Examples 8 and 9)
 
 ## Module - Strings/Case
-*Explanation is coming soon*
+Changes the case of a string.
 
 ## Module - Strings/NTCA
 #### Explanation
@@ -78,11 +82,8 @@ Converts a Number into a Char Array.
 ## Module - Strings/Regex
 *Module not final*
 
-## Module - Dictionary
-*Module not final*
-
 ## Module - Examples
-*Explanation is coming soon*
+This module just provides a bunch of function to showcase the functionality/possible uses of string parsing.
 
 ## Module - Application/Name
 *Explanation is coming soon*
