@@ -7,6 +7,7 @@ gamerule sendCommandFeedback true
 # Storage
 data modify storage string:internal callback.command set from storage string:in callback.command
 data modify storage string:internal callback.id set from storage string:in callback.id
+data modify storage string:internal callback.error set from storage string:in callback.error
 data modify storage string:internal async.iterations set from storage string:in async.iterations
 data modify storage string:internal async.parallel set from storage string:in async.parallel
 execute store result score $iterations_left string run data get storage string:internal async.iterations
