@@ -5,6 +5,7 @@ execute unless score $searching string matches -1 run data modify storage string
 execute if score $searching string matches -1 run data modify storage string:in string set from storage string:in in.string
 execute if score $searching string matches -1 run data modify storage string:in callback.command set from storage string:in in.callback.command
 execute if score $searching string matches -1 run data modify storage string:in callback.id set from storage string:in in.callback.id
+execute if score $searching string matches -1 run data modify storage string:in callback.error set from storage string:in in.callback.error
 execute if score $searching string matches -1 run data modify storage string:in async.iterations set from storage string:in in.async.iterations
 execute if score $searching string matches -1 run data modify storage string:in async.parallel set from storage string:in in.async.parallel
 execute if score $searching string matches -1 run data modify storage string:in ignore set from storage string:in in.ignore
