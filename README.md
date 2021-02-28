@@ -120,6 +120,7 @@ This module just provides a bunch of function to showcase the functionality/poss
 *Explanation is coming soon*
 
 ## Module - Application/Unix
+Important Note: This module only works for nonnegative 32-bit unix timestamps; i.e those representing dates from 1970-01-01 to 2038-01-19
 #### Instructions
 1. Input unix timestamp in seconds: `scoreboard players set $second aplication_unix 1575491054`
 2. Run `function application_unix:call`
