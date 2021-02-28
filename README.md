@@ -9,6 +9,7 @@ https://docs.google.com/document/d/15Va-tUmoMhrajIbZFhZNWKGKYWvWQMv4spxkHr877ps
 ###### Ts
 If you're looking for just string parsing this the thing you'll need:
 - [strings](https://github.com/McTsts/Minecraft-String-Utilities#module---strings): Reads strings into char arrays - STRING PARSING
+
 It's recommended to also look at this one for examples:
 - [examples](https://github.com/McTsts/Minecraft-String-Utilities#module---examples): Has some example functions (Ts)
 
