@@ -12,7 +12,6 @@ https://docs.google.com/document/d/15Va-tUmoMhrajIbZFhZNWKGKYWvWQMv4spxkHr877ps
 - [strings/case](https://github.com/McTsts/Minecraft-String-Utilities#module---stringscase): Has to lower, to upper case and get case functions
 - [strings/ntca](https://github.com/McTsts/Minecraft-String-Utilities#module---stringsntca): Converts a number into a char array
 - *[strings/regex](https://github.com/McTsts/Minecraft-String-Utilities#module---stringsregex): WIP part for a regex module*
-- *[dictionary](https://github.com/McTsts/Minecraft-String-Utilities#module---dictionary): WIP part for a tts module*
 - [examples](https://github.com/McTsts/Minecraft-String-Utilities#module---examples): Has some example functions (Ts)
 - [application/name](https://github.com/McTsts/Minecraft-String-Utilities#module---applicationname): Shortens names using a set of rules, for occasions where messages may require names below a certain length
 
