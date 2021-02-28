@@ -45,6 +45,9 @@ Converts a String into a Char Array.
 1. Replacement for Step 1: `data modify storage string:io queue append value {string:"abcde",callback:{command:"function example:test",id:1}}`
 2. When the string is completely read the function in 'callback.command' is called and the score of '$callback string' is set to 'callback.id'. Both values are optional (see examples 3-4)
 3. Several strings can be handelled after each other with a queue by using Basic Step 1 and Step 2 several times after one another (see example 4)
+###### Error Callback
+1. An error callback can also be specified: `data modify storage string:io queue append value {string:"abcde",callback:{command:"function example:test",id:1,error:"function example:error"}}` 
+2. The error callback works the same way as the normal callback does, but doesn't use an id. You can use just one of the two callbacks without the other one, or both at the same time. Currently the error callback is only called when max iterations (a dynamically calculated internal value) is hit, this generally means that the input contains an invalid character.
 ###### Async
 1. Replacement for Step 1: `data modify storage string:io queue append value {string:"abcde",async:{iterations:10}}`
 2. After 'async.iterations' iterations the module stops processing and continues in the next tick. Can be combined with callbacks and the callback will be called once the entire string has been processed.
