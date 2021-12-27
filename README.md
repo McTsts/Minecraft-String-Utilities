@@ -5,6 +5,30 @@ Here's an explanation of *how* this works:
 https://docs.google.com/document/d/15Va-tUmoMhrajIbZFhZNWKGKYWvWQMv4spxkHr877ps
 
 
+This is the very first implementation of string parsing and only good for some situations, there are now better string parsers for most situations.  
+Instead use `suso.str` or `suso.str_heads` if you can, both of these are significantly faster than `strings`.  
+https://github.com/5uso/String-Parser  
+https://github.com/5uso/Head-Parser  
+  
+**Comparison**  
+`suso.str_heads`: fastest, can parse only skulls  
+`suso.str`: fast, can parse anything except `"`, `!` and ` `  
+`strings`: slow, parses only a set of 96 characters, including `"`, `!` and ` `  
+    
+  
+  
+        
+        
+        
+          
+  
+  
+  
+  
+  
+  
+  
+  
 ## Modules
 ###### Ts
 If you're looking for just string parsing this the thing you'll need:
