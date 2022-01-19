@@ -5,14 +5,16 @@ Here's an explanation of *how* this works:
 https://docs.google.com/document/d/15Va-tUmoMhrajIbZFhZNWKGKYWvWQMv4spxkHr877ps
 
 
-This is the very first implementation of string parsing and only good for some situations, there are now better string parsers for most situations.  
+This is the very first implementation of string parsing, there are now better string parsers for all situations.  
 Instead use `suso.str` or `suso.str_heads` if you can, both of these are significantly faster than `strings`.  
-https://github.com/5uso/String-Parser  
-https://github.com/5uso/Head-Parser  
+https://github.com/5uso/String-Parser (`suso.str`)  
+https://github.com/5uso/Head-Parser  (`suso.str_heads`)
+https://github.com/McTsts/String-Parser (`suso.str` (Ts Branch))
   
 **Comparison**  
 `suso.str_heads`: fastest, can parse only skulls  
 `suso.str`: fast, can parse anything except `"`, `!` and ` `  
+`suso.str` (Ts Branch): average, can parse anything (including `"`, `!` and ` `)
 `strings`: slow, parses only a set of 96 characters, including `"`, `!` and ` `  
     
   
