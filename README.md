@@ -170,11 +170,11 @@ Tags can be added and removed from entities by using the `data` command and modi
 ##### Made by:
 
 - McTsts > Original String Parser
-- Suso > Suso String Parser
+- Suso > String Parser
+- gibbsly > Base64 & JSON Parser (included in this repo)
 
 ###### Additional Credit:
 
-- gibbsly > General Help
 - Zonteek > Time from Command Block Concept
 - SirBenet > `"a, b, c"` tag step explanation
 - Onnowhere > `/help` step idea
