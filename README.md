@@ -33,9 +33,10 @@ The original string parser (`strings`, which is featured in this repo) is no lon
 
 ### Utilities
 Here's some utilties that are useful in combination with string parsing:
-- JSON Parser (no multitype array support, full number support, [repo](https://github.com/McTsts/Minecraft-String-Utilities/tree/master/old/parser))
+- JSON Parser (no multitype array support, full number support, [link](https://github.com/McTsts/Minecraft-String-Utilities/tree/master/old/parser))
 - JSON Parser (full array support, limited number support, [repo](https://github.com/McTsts/json-parser))
-- Base64 Parser ([repo](https://github.com/McTsts/Minecraft-String-Utilities/tree/master/old/base64))
+- Base64 Parser ([link](https://github.com/McTsts/Minecraft-String-Utilities/tree/master/old/base64))
+- Unix Timesamp Parser ([link](https://github.com/McTsts/Minecraft-String-Utilities/tree/master/old/applications/data/application_unix/functions))
 
 ### Examples
 Here's some examples of what this could or has been used for:
