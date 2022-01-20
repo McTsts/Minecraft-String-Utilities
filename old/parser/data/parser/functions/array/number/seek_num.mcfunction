@@ -1,0 +1,3 @@
+#looks for the first valid number
+data modify storage parse:list check set from storage parse:list in[0]
+execute unless data storage parse:list {check:"."} unless data storage parse:list {check:"-"} unless data storage parse:list {check:"0"} unless data storage parse:list {check:"1"} unless data storage parse:list {check:"2"} unless data storage parse:list {check:"3"} unless data storage parse:list {check:"4"} unless data storage parse:list {check:"5"} unless data storage parse:list {check:"6"} unless data storage parse:list {check:"7"} unless data storage parse:list {check:"8"} unless data storage parse:list {check:"9"} run function parser:array/number/seek_num_retry
