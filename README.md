@@ -26,7 +26,7 @@ The original string parser (`strings`, which is featured in this repo) is no lon
 *Choose the topmost applicable string parser*  
 `suso.str_heads` [link](https://github.com/5uso/Head-Parser): fastest, can parse only skulls  
 `suso.str` [link](https://github.com/5uso/String-Parser): fast, can parse anything except `"`, `!` and ` `  
-`suso.str (Ts Branch)` [link](https://github.com/McTsts/String-Parser): average, can parse anything (including `"`, `!` and ` `)  
+`suso.str (Ts Fork)` [link](https://github.com/McTsts/String-Parser): average, can parse anything (including `"`, `!` and ` `)  
 `strings` (deprecated): slow, parses only a set of 96 characters, including `"`, `!` and ` `  
 
 ## Examples & Utilities
