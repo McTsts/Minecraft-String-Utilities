@@ -54,7 +54,6 @@ Here's some examples of what this could or has been used for:
 ## Explanation
 
 ### Main System
-*String parsing uses a variety of obscure command tricks, that most people may not be familiar with. For all of these, there will be an explanation in the next section*  
 
 #### (1) General Idea
 To parse a string into a char array, string parsing abuses the fact that the `tag list` command, sorts it's output alphabetically. By "guessing" a string and then comparing it to the string we are trying to parse, we can slowly binary search our way to the original input string.  
