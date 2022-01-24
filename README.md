@@ -23,11 +23,11 @@ Since 2022-01-19 the string parser on this repo is no longer relevant and has be
 ## Implementations
 The original string parser (`strings`, which is featured in this repo) is no longer the recommended to be used. Instead the [Suso's general string parser](https://github.com/5uso/String-Parser) should be used.
 
-### Comparison
+### General String Parser
 `suso.str` [link](https://github.com/5uso/String-Parser): This implements all the features of the 4 deprecated string parsers and more. You should use this string parser for anything that requires string parsing.
 
-Deprecated:
-*These string parsers are deprecated and should no longer be used.
+### Deprecated
+*These string parsers are deprecated and should no longer be used.*   
 `suso.str (Old)` [link](https://github.com/5uso/String-Parser/tree/c9cd23e3afc091b14c357b281d375632672b60f3): fast, can parse anything except `"`, `!` and ` `  
 `suso.str_heads` [link](https://github.com/5uso/Head-Parser): fastest, can parse only skulls  
 `suso.str (Ts Fork)` [link](https://github.com/McTsts/String-Parser): average, can parse anything (including `"`, `!` and ` `)  
