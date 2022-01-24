@@ -138,14 +138,20 @@ When the full string has been found, the return value (the integer) will be 2 (o
 ##### Time in LastOutput
 The `LastOutput` of commands always contains the current time, so if the current time changes this might mean that two `LastOutput`s that should be same are no longer the same. To avoid this we use `help`'s feedback to see if the [time has changed](#help-timing). If the time has changed during one iteration, we ignore anything found during this iteration and restart it. 
 
-#### Quotes in the Input
-When a quote is in the input, it would mess up the list of characters when found. e.g. when we find `"` as the second character our list of found characters might be: `["a",'"']`. The important thing here is that `"`'s are automatically surrounded by single quotes, instead of by double quotes, like every other character. Now this NBT array is no longer valid JSON and can't be interpreted anymore (which is required to put it on an entity name, to enchant flatten it, to use `tag list` on it). To solve this we only use this found character list for the output, and have a second place where we keep track of all found characters: a sign. At the start of string parsing we reset this sign and every time a new character is found the sign's content is replaced by it's current contents + the new character (e.g. `'[{"nbt":"Text1","block":"~ ~ ~","interpret":true},{"nbt":"newChar","storage":"<storage>"}]'`). This will make it so that the sign always contains a valid JSON representation of our currently found characters. The format being different doesn't really matter, as it is enchant flattened anyway.
+#### Parsing Quotes
+When a quote is in the input, it would mess up the list of characters when found. e.g. when we find `"` as the second character our list of found characters might be: `["a",'"']`. The important thing here is that `"`'s are automatically surrounded by single quotes, instead of by double quotes, like every other character. Now this NBT array is no longer valid JSON and can't be interpreted anymore (which is required to put it on an entity name, to enchant flatten it, to use `tag list` on it). 
+Originally we used the help of a sign to solve this issue, however I finally found a much better method, instead of using interpret we simply use: `{"nbt":"array[]","storage":"storage","interpret":true,"separator":""}`
 
-Note: as I wrote this it occurred to me that you can probably use something like `{"nbt":"array[]","storage":"storage","interpret":true,"separator":""}` instead, but we haven't implemented this yet.
+Additionally quotes are represents as `\"`, meaning we always have to search for `\"` instead. This means `\"` does *not* sort like you'd expect from `"` instead it sorts right before `\\`
 
-#### Exclamation Mark and Space
+#### Parsing Exclamation Mark & Space
 `!` and ` ` are the only two characters that sort before `"`. Since each string ends with a `"`, those two characters will mess up the sorting if contained in a string. This can be solved by appending as many spaces to both the input and each guess, as the maximum expected amount of consecutive spaces and exclamation marks.
 
+#### Parsing Backslash
+To search for `\` you have to search for `\\` instead. This sorts *after* `\"` (see quotes)
+
+#### Parsing Newline
+You can search for newlines by searching for `\n` (sorts after `\\`), however you can't easily obtain a string with a value of `\n`. To obtain it, open a writable book, type enter, close the book, and copy the contents of the first page of the book into storage. Now, when you want to search for newline copy this newline string into the right spot in your input character array.
 
 ### Tricks Used
 
