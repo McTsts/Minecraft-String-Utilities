@@ -44,8 +44,8 @@ Here's some utilities that are useful in combination with string parsing:
 ### Examples
 Here's some examples of what this could or has been used for:
 - Parsing Player Input[¹](#parsing-player-inputs) ([showcase video](https://www.youtube.com/watch?v=F89pYoNe6XU&list=PLY95XT5aSE-slsxs8X8_Oe7HJ9E2ZOJpk&index=3))
-- Detecing Player Skin Changes[²](#obtain-player-data)
-- Detecing Player's Capes / Model[²](#obtain-player-data) ([showcase video](https://www.youtube.com/watch?v=F89pYoNe6XU&list=PLY95XT5aSE-slsxs8X8_Oe7HJ9E2ZOJpk&index=3))
+- Detecting Player Skin Changes[²](#obtain-player-data)
+- Detecting Player's Capes / Model[²](#obtain-player-data) ([showcase video](https://www.youtube.com/watch?v=F89pYoNe6XU&list=PLY95XT5aSE-slsxs8X8_Oe7HJ9E2ZOJpk&index=3))
 - Getting unix timestamp[²](#obtain-player-data) ([showcase video](https://www.youtube.com/watch?v=F89pYoNe6XU&list=PLY95XT5aSE-slsxs8X8_Oe7HJ9E2ZOJpk&index=3))
 - Parsing JSON ([explanation video](https://www.youtube.com/watch?v=XP5BtvSiMAY))
 - TTS ([explanation video](https://www.youtube.com/watch?v=y4nBIbtooZ4&feature=youtu.be))
