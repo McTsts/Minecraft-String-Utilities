@@ -2,6 +2,8 @@
 String parsing is the method of turning a string into a char array (i.e. an array of strings with a length of one).  
 For example, string parsing would turn the string `"abc"` into `["a","b","c"]`.
 
+This repository hosted the first string parser, however you should now use [Suso's general string parser](https://github.com/5uso/String-Parser) instead.
+
 **Table of Contents**
 - [History](#history)
 - [Implementations](#implementations)
@@ -19,13 +21,15 @@ Since 2022-01-19 the string parser on this repo is no longer relevant and has be
 
 
 ## Implementations
-There currently are two major implementations of string parsing (one of which has 3 forks).  
-The original string parser (`strings`, which is featured in this repo) is no longer the best string parser for any situation, instead one of the three branches of the suso string parser should be used.
+The original string parser (`strings`, which is featured in this repo) is no longer the recommended to be used. Instead the [Suso's general string parser](https://github.com/5uso/String-Parser) should be used.
 
 ### Comparison
-*Choose the topmost applicable string parser*  
+`suso.str` [link](https://github.com/5uso/String-Parser): This implements all the features of the 4 deprecated string parsers and more. You should use this string parser for anything that requires string parsing.
+
+Deprecated:
+*These string parsers are deprecated and should no longer be used.
+`suso.str (Old)` [link](https://github.com/5uso/String-Parser/tree/c9cd23e3afc091b14c357b281d375632672b60f3): fast, can parse anything except `"`, `!` and ` `  
 `suso.str_heads` [link](https://github.com/5uso/Head-Parser): fastest, can parse only skulls  
-`suso.str` [link](https://github.com/5uso/String-Parser): fast, can parse anything except `"`, `!` and ` `  
 `suso.str (Ts Fork)` [link](https://github.com/McTsts/String-Parser): average, can parse anything (including `"`, `!` and ` `)  
 `strings` (deprecated): slow, parses only a set of 96 characters, including `"`, `!` and ` `  
 
