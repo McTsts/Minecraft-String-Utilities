@@ -37,10 +37,9 @@ The original string parser (`strings`, which is featured in this repo) is no lon
 
 ### Utilities
 Here's some utilities that are useful in combination with string parsing:
-- JSON Parser (no multitype array support, full number support, [link](https://github.com/McTsts/Minecraft-String-Utilities/tree/master/old/parser))
-- JSON Parser (full array support, limited number support, [repo](https://github.com/McTsts/json-parser))
+- JSON Parser ([repo](https://github.com/McTsts/json-parser))
 - Base64 Parser ([link](https://github.com/McTsts/Minecraft-String-Utilities/tree/master/old/base64))
-- Unix Timesamp Parser ([link](https://github.com/McTsts/Minecraft-String-Utilities/tree/master/old/applications/data/application_unix/functions))
+- Unix Timestamp Parser ([link](https://github.com/McTsts/Minecraft-String-Utilities/tree/master/old/applications/data/application_unix/functions))
 
 ### Examples
 Here's some examples of what this could or has been used for:
@@ -55,9 +54,10 @@ Here's some examples of what this could or has been used for:
 - Putting Player Names on shields[³](#obtaining-player-names) ([explanation video](https://www.youtube.com/watch?v=oYZk4ok6Sfc))
 - Syncing to Real Time[⁴](#commandblock-output) ([explanation video](https://www.youtube.com/watch?v=vzPvSE8Z8r8))
 - Informing a datapack when it's outdated[²](#obtain-player-data)
-- Determining the length of a string
+- Determining the width of a string[⁵](#getting-width)
 - Getting the seed[⁴](#commandblock-output)
 - Offbrand Players[³](#obtaining-player-names) ([image](https://raw.githubusercontent.com/McTsts/Minecraft-String-Utilities/master/images/offbrand_player.png))
+- Replacing player names[⁵](#getting-width)
 
 #### Parsing Player Inputs
 String parsing provides an easy way to parse player inputs, especially by using signs and books. You can simply copy the string from these into the string parser. It should be noted that server-side books and signs only update once you close them.
@@ -102,6 +102,14 @@ You can obtain player names as a char array, by using the [player head loottable
 
 ### Commandblock Output
 You can also use string parsing to get data from commandblock outputs you can't otherwise access. For example the time at the start of every command (e.g. `/help me`, the time is not the same as unix timestamp, the command block time is a) local time and b) only hours/minutes/seconds) as well as the output of `/seed`. To do this you would first execute the command in a command block, then copy the `LastOutput` of this command into the string parser. This process can be optimized a lot by using a prep string, max chars and limiting the char set it searches for.
+
+### Getting Width
+Getting the length of a non-JSON string is just a matter of parsing it and then using a look-up table for all characters you want to support. You then add up the widths of all characters (while respecting that the gap between characters is 1 pixel).  
+
+You can for example use this to determine the length of a player name, then using [negative spaces](https://github.com/AmberWat/NegativeSpaceFont) in team prefix/suffixes to replace the player name with a different text.
+
+Getting the length of a JSON string is a fairly convoluted process. You first need to string parse the string, then [JSON parse](https://github.com/McTsts/json-parser) it, then extract all characters from the JSON, while separating bold and non-bold characters. You use the same look-up table process as for normal strings, with the exception, that all bold characters are 1 pixel wider than the non-bold variant.  
+
 
 ## Explanation
 
