@@ -36,23 +36,79 @@ The original string parser (`strings`, which is featured in this repo) is no lon
 ## Examples & Utilities
 
 ### Utilities
-Here are some utilities that are useful in combination with string parsing:
-- JSON Parser (no multitype array support, full number support, [link](https://github.com/McTsts/Minecraft-String-Utilities/tree/master/old/parser))
-- JSON Parser (full array support, limited number support, [repo](https://github.com/McTsts/json-parser))
+Here's some utilities that are useful in combination with string parsing:
+- JSON Parser ([repo](https://github.com/McTsts/json-parser))
 - Base64 Parser ([link](https://github.com/McTsts/Minecraft-String-Utilities/tree/master/old/base64))
-- Unix Timesamp Parser ([link](https://github.com/McTsts/Minecraft-String-Utilities/tree/master/old/applications/data/application_unix/functions))
+- Unix Timestamp Parser ([link](https://github.com/McTsts/Minecraft-String-Utilities/tree/master/old/applications/data/application_unix/functions))
 
 ### Examples
-Here are some examples of what this could or has been used for:
-- Parsing Player Input ([video](https://www.youtube.com/watch?v=F89pYoNe6XU&list=PLY95XT5aSE-slsxs8X8_Oe7HJ9E2ZOJpk&index=3))
-- Detecing Player Skin Changes
-- Detecing Player's Capes / Model ([video](https://www.youtube.com/watch?v=F89pYoNe6XU&list=PLY95XT5aSE-slsxs8X8_Oe7HJ9E2ZOJpk&index=3))
-- Getting unix timestamp ([video](https://www.youtube.com/watch?v=F89pYoNe6XU&list=PLY95XT5aSE-slsxs8X8_Oe7HJ9E2ZOJpk&index=3))
-- Parsing JSON ([video](https://www.youtube.com/watch?v=XP5BtvSiMAY))
-- TTS ([video](https://www.youtube.com/watch?v=y4nBIbtooZ4&feature=youtu.be))
-- Skull DLC ([video](https://www.youtube.com/watch?v=lP0uTkLcd3w))
-- Putting Player Names on shields ([video](https://www.youtube.com/watch?v=oYZk4ok6Sfc))
-- Syncing to Real Time ([video](https://www.youtube.com/watch?v=vzPvSE8Z8r8))
+Here's some examples of what this could or has been used for:
+- Parsing Player Input[¹](#parsing-player-inputs) ([showcase video](https://www.youtube.com/watch?v=F89pYoNe6XU&list=PLY95XT5aSE-slsxs8X8_Oe7HJ9E2ZOJpk&index=3))
+- Detecting Player Skin Changes[²](#obtain-player-data)
+- Detecting Player's Capes / Model[²](#obtain-player-data) ([showcase video](https://www.youtube.com/watch?v=F89pYoNe6XU&list=PLY95XT5aSE-slsxs8X8_Oe7HJ9E2ZOJpk&index=3))
+- Getting unix timestamp[²](#obtain-player-data) ([showcase video](https://www.youtube.com/watch?v=F89pYoNe6XU&list=PLY95XT5aSE-slsxs8X8_Oe7HJ9E2ZOJpk&index=3))
+- Parsing JSON ([explanation video](https://www.youtube.com/watch?v=XP5BtvSiMAY))
+- TTS ([explanation video](https://www.youtube.com/watch?v=y4nBIbtooZ4&feature=youtu.be))
+- Skull DLC[²](#obtain-player-data) ([showcase video](https://www.youtube.com/watch?v=lP0uTkLcd3w))
+- Simplified Skull DLC[²](#obtain-player-data) ([showcase video](https://www.youtube.com/watch?v=3KMC_4a2Phk))
+- Putting Player Names on shields[³](#obtaining-player-names) ([explanation video](https://www.youtube.com/watch?v=oYZk4ok6Sfc))
+- Syncing to Real Time[⁴](#commandblock-output) ([explanation video](https://www.youtube.com/watch?v=vzPvSE8Z8r8))
+- Informing a datapack when it's outdated[²](#obtain-player-data)
+- Determining the width of a string[⁵](#getting-width)
+- Getting the seed[⁴](#commandblock-output)
+- Offbrand Players[³](#obtaining-player-names) ([image](https://raw.githubusercontent.com/McTsts/Minecraft-String-Utilities/master/images/offbrand_player.png))
+- Replacing player names[⁵](#getting-width)
+
+#### Parsing Player Inputs
+String parsing provides an easy way to parse player inputs, especially by using signs and books. You can simply copy the string from these into the string parser. It should be noted that server-side books and signs only update once you close them.
+
+#### Obtain Player Data
+When you create a player skull it will load some player data as a Base64 encoded string. For example this Base64 value in my skill would be:
+```
+ewogICJ0aW1lc3RhbXAiIDogMTY0MzA2MzE3Njc1MywKICAicHJvZmlsZUlkIiA6ICJhNDM5YzU5YjI5ZDQ0MzkwOWM5OTJlYTk1ODlhZmI0YyIsCiAgInByb2ZpbGVOYW1lIiA6ICJfdHN0c18iLAogICJ0ZXh0dXJlcyIgOiB7CiAgICAiU0tJTiIgOiB7CiAgICAgICJ1cmwiIDogImh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMWJiZGI3ZTNkMTg2YzE0OGZkM2Y2MGNmODM0YjlmMmE5NzNlNTkwNjEyODg3YzgxMmUxN2I1OGRiZWEyOTUxOCIKICAgIH0sCiAgICAiQ0FQRSIgOiB7CiAgICAgICJ1cmwiIDogImh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTc5MTI3OTBmZjE2NGI5MzE5NmYwOGJhNzFkMGU2MjEyOTMwNDc3NmQwZjM0NzMzNGY4YTZlYWU1MDlmOGE1NiIKICAgIH0KICB9Cn0=
+```
+By first string parsing this value and then Base64 encoding it, we can obtain the following data:
+```json
+{
+  "timestamp" : 1643063176753,
+  "profileId" : "a439c59b29d443909c992ea9589afb4c",
+  "profileName" : "_tsts_",
+  "textures" : {
+    "SKIN" : {
+      "url" : "http://textures.minecraft.net/texture/1bbdb7e3d186c148fd3f60cf834b9f2a973e590612887c812e17b58dbea29518",
+      "metadata" : {
+        "model" : "slim"
+      }
+    },
+    "CAPE" : {
+      "url" : "http://textures.minecraft.net/texture/17912790ff164b93196f08ba71d0e62129304776d0f347334f8a6eae509f8a56"
+    }
+  }
+}
+```
+`profileId` and `profileName` aren't very useful as we can obtain this value more easily. However this decoded data gives us access to four interesting things:
+- `timestamp`, the unix timestamp
+- `textures.SKIN.url`, the url of the player's skin (the same value for players with the same skin)
+- `textures.SKIN.metadata.model`, the model of the players skin (metadata is only set for Alex model, for Steve model no value is present instead)
+- `textures.CAPE.url`, the url of the player's *currently enabled* cape (the same value for players with the same cape)
+
+Outside of the obvious uses, this can be used to detect when a player's skin changes (e.g. the *creator's* skin. You could use this to inform older versions of maps/datapacks that they're outdated by changing skin when a new version comes out). You can go further and change skin a bunch of times, save the skin urls and then have a look up table where each skin means something specific. In Skull DLC we use a very advanced method of this to allow 2^32 (4294967296) different values.
+You can also use both the cape (everyone has at least the migrator cape, so you always can turn that on and off) and the model as 2 easy bits of data you can transmit.
+
+Because skulls load asynchronously, you can't just place it and immediately parse it. You need to wait until it's loaded, however Suso's General String Parser provides a builtin function to do this for you.
+
+### Obtaining Player Names
+You can obtain player names as a char array, by using the [player head loottable](https://github.com/MinecraftPhi/MinecraftPhi-modules/blob/master/phi.playerinfo/src/datapack/data/phi.playerinfo/loot_tables/get_head.json) and then copying the name from the created skull into the string parser. You then can do various things with the player's name.
+
+### Commandblock Output
+You can also use string parsing to get data from commandblock outputs you can't otherwise access. For example the time at the start of every command (e.g. `/help me`, the time is not the same as unix timestamp, the command block time is a) local time and b) only hours/minutes/seconds) as well as the output of `/seed`. To do this you would first execute the command in a command block, then copy the `LastOutput` of this command into the string parser. This process can be optimized a lot by using a prep string, max chars and limiting the char set it searches for.
+
+### Getting Width
+Getting the length of a non-JSON string is just a matter of parsing it and then using a look-up table for all characters you want to support. You then add up the widths of all characters (while respecting that the gap between characters is 1 pixel).  
+
+You can for example use this to determine the length of a player name, then using [negative spaces](https://github.com/AmberWat/NegativeSpaceFont) in team prefix/suffixes to replace the player name with a different text.
+
+Getting the length of a JSON string is a fairly convoluted process. You first need to string parse the string, then [JSON parse](https://github.com/McTsts/json-parser) it, then extract all characters from the JSON, while separating bold and non-bold characters. You use the same look-up table process as for normal strings, with the exception, that all bold characters are 1 pixel wider than the non-bold variant.  
 
 
 ## Explanation
