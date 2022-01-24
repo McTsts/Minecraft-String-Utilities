@@ -47,7 +47,7 @@ Here's some examples of what this could or has been used for:
 - Detecting Player Skin Changes[²](#obtain-player-data)
 - Detecting Player's Capes / Model[²](#obtain-player-data) ([showcase video](https://www.youtube.com/watch?v=F89pYoNe6XU&list=PLY95XT5aSE-slsxs8X8_Oe7HJ9E2ZOJpk&index=3))
 - Getting unix timestamp[²](#obtain-player-data) ([showcase video](https://www.youtube.com/watch?v=F89pYoNe6XU&list=PLY95XT5aSE-slsxs8X8_Oe7HJ9E2ZOJpk&index=3))
-- Parsing JSON ([explanation video](https://www.youtube.com/watch?v=XP5BtvSiMAY))
+- Parsing JSON ([old parser](https://github.com/McTsts/Minecraft-String-Utilities/tree/master/old/parser), [old explanation video](https://www.youtube.com/watch?v=XP5BtvSiMAY))
 - TTS ([explanation video](https://www.youtube.com/watch?v=y4nBIbtooZ4&feature=youtu.be))
 - Skull DLC[²](#obtain-player-data) ([showcase video](https://www.youtube.com/watch?v=lP0uTkLcd3w))
 - Simplified Skull DLC[²](#obtain-player-data) ([showcase video](https://www.youtube.com/watch?v=3KMC_4a2Phk))
