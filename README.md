@@ -47,7 +47,7 @@ Here's some examples of what this could or has been used for:
 - Detecting Player Skin Changes[²](#obtain-player-data)
 - Detecting Player's Capes / Model[²](#obtain-player-data) ([showcase video](https://www.youtube.com/watch?v=F89pYoNe6XU&list=PLY95XT5aSE-slsxs8X8_Oe7HJ9E2ZOJpk&index=3))
 - Getting unix timestamp[²](#obtain-player-data) ([showcase video](https://www.youtube.com/watch?v=F89pYoNe6XU&list=PLY95XT5aSE-slsxs8X8_Oe7HJ9E2ZOJpk&index=3))
-- Parsing JSON ([old parser](https://github.com/McTsts/Minecraft-String-Utilities/tree/master/old/parser), [old explanation video](https://www.youtube.com/watch?v=XP5BtvSiMAY))
+- Parsing JSON ([explanation video](https://www.youtube.com/watch?v=XP5BtvSiMAY))
 - TTS ([explanation video](https://www.youtube.com/watch?v=y4nBIbtooZ4&feature=youtu.be))
 - Skull DLC[²](#obtain-player-data) ([showcase video](https://www.youtube.com/watch?v=lP0uTkLcd3w))
 - Simplified Skull DLC[²](#obtain-player-data) ([showcase video](https://www.youtube.com/watch?v=3KMC_4a2Phk))
@@ -101,10 +101,10 @@ Because skulls load asynchronously, you can't just place it and immediately pars
 You can obtain player names as a char array, by using the [player head loottable](https://github.com/MinecraftPhi/MinecraftPhi-modules/blob/master/phi.playerinfo/src/datapack/data/phi.playerinfo/loot_tables/get_head.json) and then copying the name from the created skull into the string parser. You then can do various things with the player's name.
 
 ### Commandblock Output
-You can also use string parsing to get data from commandblock outputs you can't otherwise access. For example the time at the start of every command (e.g. `/help me`, the time is not the same as unix timestamp, the command block time is a) local time and b) only hours/minutes/seconds) as well as the output of `/seed`. To do this you would first execute the command in a command block, then copy the `LastOutput` of this command into the string parser. This process can be optimized a lot by using a prep string, max chars and limiting the char set it searches for.
+You can also use string parsing to get data from commandblock outputs you can't otherwise access. For example the time at the start of every command (e.g. `/help me`, the time is not the same as unix timestamp, the command block time is a) local time and b) only hours/minutes/seconds) as well as the output of `/seed`. To do this you would first execute the command in a command block, then copy the `LastOutput` of this command into the string parser. This process can be optimized a lot by using a prep string, max chars, and limiting the char set it searches for.
 
 ### Getting Width
-Getting the length of a non-JSON string is just a matter of parsing it and then using a look-up table for all characters you want to support. You then add up the widths of all characters (while respecting that the gap between characters is 1 pixel).  
+Getting the length of a non-JSON string is just a matter of parsing it and then using a look-up table for all characters you want to support. You then add up the widths of all characters (while respecting that the gap between characters is 1 pixel).
 
 You can for example use this to determine the length of a player name, then using [negative spaces](https://github.com/AmberWat/NegativeSpaceFont) in team prefix/suffixes to replace the player name with a different text.
 
@@ -119,7 +119,7 @@ Getting the length of a JSON string is a fairly convoluted process. You first ne
 To parse a string into a char array, string parsing abuses the fact that the `tag list` command sorts its output alphabetically. By "guessing" a string, then comparing it to the string we are trying to parse, we can slowly binary search our way to the original input string.  
 
 #### (2) LastOutput
-Since the `tag list` commands return value is the amount of tags, we can't easily access the sorted tag list. The only way to access this sorted list is by executing the command from a command block, which will the return the sorted tag list as part of its `LastOutput`, albeit inside a bunch of JSON.
+Since the `tag list` commands return value is the amount of tags, we can't easily access the sorted tag list. The only way to access this sorted list is by executing the command from a command block, which will then return the sorted tag list as part of its `LastOutput`, albeit inside a bunch of JSON.
 
 The `tag list` `LastOutput` of an entity called `_tsts_`, with the tags `x`, `y` and `z`, would *look* something like this to the user:
 
@@ -158,11 +158,11 @@ This way, we can slowly get the entire input string.
 #### (4) Flattening
 
 Unfortunately, there is an issue with the previous step. Our input string would be, well, a string (e.g. `"xyz"`), while our found characters would be an array of characters (e.g. `["x","y"]` after finding the first two). This means we can't actually compare these two and our binary search won't work.  
-To work around this, the array needs to be flattened into a string (`["x","y"]` => `"xy"`), however Minecraft doesn't really have a method of string flattening.  
+To work around this, the array needs to be flattened into a string (`["x","y"]` => `"xy"`). Unfortunately, Minecraft doesn't offer a convenient way to flatten strings.  
 
 The only way to flatten strings is to use [Enchant Flattening](#enchant-flattening)
 
-To do this, first we convert our NBT Array of characters into JSON (by putting it on a sign with `{"nbt":"<path>","storage":"<storage>","interpret":true`) which will return something like `{"text":"x","extra":[{"text":"y"},{"text":"z"}]}`, then we copy this onto an entity's name (signs support [Component Resolution](#component-resolution), but entities do not). After using [enchant flattening](#enchant-flattening), our string will have turned into something like:  
+To do this, first we convert our NBT Array of characters into JSON (by putting it on a sign with `{"nbt":"<path>","storage":"<storage>","interpret":true`), which will return something like `{"text":"x","extra":[{"text":"y"},{"text":"z"}]}`. Then, we copy this onto an entity's name (signs support [Component Resolution](#component-resolution), but entities do not). After using [enchant flattening](#enchant-flattening), our string will have turned into something like:  
 
 ![image](https://user-images.githubusercontent.com/24660095/150368778-a8c594ab-e139-4a99-bfb3-fad35c8842f0.png)  
 Our array has now been flattened into a string, though it is in the middle of a JSON string and we cannot extract it.  
@@ -173,12 +173,12 @@ We can now copy both enchant flattened strings onto an entity, use `tag list` as
 #### (5) Reading Result
 One more problem arises when trying to read the output of `tag list`. Since the output value is also a string, we don't actually know which of our values sorted first.
 
-To figure out which value sorted first, we have to create a fake `tag list` output that matches one of the two possible results we expect. We can enchant flatten our fake output as well as the real fake output, and then we copy the real output ontop of the fake output. If they are the same, the operation will fail, otherwise it will succeed. This way, we can know which way our strings sorted.
+To figure out which value sorted first, we have to create a fake `tag list` output that matches one of the two possible results we expect. We can enchant flatten our fake output as well as the real fake output, and then we copy the real output on top of the fake output. If they are the same, the operation will fail; otherwise, it will succeed. This way, we can know which way our strings sorted.
 
 #### (6) Constructing Fake Ouput
-Because the output of the `tag list` command contains the name of the entity, its UUID and the current time, constructing the fake output is fairly convoluted.  
+Because the output of the `tag list` command contains the name of the entity, its UUID, and the current time; constructing the fake output is fairly convoluted.  
 
-First, we need to add a tag `"a, b, c"` (its one tag) to our entity in the binary search step. This tag will always sort first (since the strings we are comparing are JSON strings and both start with `{`) and thereby doesn't affect the result. The exact name of this `"a, b, c"` tag is irrelevant, what matters is that it looks like it as 3 tags (when it really is just one).  
+First, we need to add a tag `"a, b, c"` (it's a single tag, trust me) to our entity in the binary search step. This tag will always sort first (since the strings we are comparing are JSON strings and both start with `{`) and thereby doesn't affect the result. The exact name of this `"a, b, c"` tag is irrelevant, what matters is that it's typed into the output as if it was three tags (when it really is just one).  
 Now, the output of binary search will look something like: `<entity> has 3 tags: a, b, c, <string #1>, <string #2>`
 
 To create our fake output, we first remove all the tags from the entity used by the binary search (has to be the same one!), then add 3 separate tags, `a`, `b` and `c`, then run the `tag list` command for it. We will receive an output that looks something like this: `<entity> has 3 tags: a, b, c`  
@@ -193,31 +193,35 @@ Then, we use enchant flattening (on both the fake and real output) and our fake 
 #### (7) Minor Things
 
 ##### Detecting when the string has completely been found
-When the full string has been found, the return value (the integer) will be 2 (one of those being `a, b, c`) instead of 3 since both the input string as well as the current guess will be the same. In this case, we know our current guess is right, and that we are done string parsing.
+When the full string has been found, the return value (the integer) will be 2 (one of those being `a, b, c`) instead of 3 since both the input string as well as the current guess will be the same. In this case, we know our current guess is right, and that we are done string parsing. This is caused by duplicate tags being removed, which would be the case if both strings were to match.
 
 ##### Time in LastOutput
-The `LastOutput` of commands always contains the current time, so if the current time changes this might mean that two `LastOutput`s that should be same are no longer the same. To avoid this, we use `help`'s feedback to see if the [time has changed](#help-timing). If the time has changed during one iteration, we ignore anything found during this iteration and restart it. 
+The `LastOutput` of commands always contains the current time. If the current time changes this might mean that two `LastOutput`s that should be same are no longer the same. To avoid this, we use `help`'s feedback to see if the [time has changed](#help-timing). If the time has changed during one iteration, we ignore anything found during this iteration and restart it. 
 
 #### Parsing Quotes
-When a quote is in the input, it would mess up the list of characters when found, e.g., when we find `"` as the second character, our list of found characters might be: `["a",'"']`. The important thing here is that `"`'s are automatically surrounded by single quotes, instead of by double quotes, like every other character. Now, this NBT array is no longer valid JSON, and can't be interpreted anymore (which is required to put it on an entity name, to enchant flatten it, or to use `tag list` on it). 
+When a quote is in the input, it would mess up the list of characters when found, e.g., when we find `"` as the second character, our list of found characters might be: `["a",'"']`. The important thing here is that `"`'s are automatically surrounded by single quotes instead of by double quotes, unlike every other character. This NBT array is no longer valid JSON, and can't be interpreted anymore (which is required to put it on an entity name, to enchant flatten it, or to use `tag list` on it). 
 Originally, we used the help of a sign to solve this issue, however, I finally found a much better method. Instead of using interpret we simply use: `{"nbt":"array[]","storage":"storage","interpret":true,"separator":""}`
 
 Additionally, quotes are represented as `\"`, meaning we always have to search for `\"` instead. This means `\"` does *not* sort like you would expect from `"`, instead it sorts right before `\\`
 
 #### Parsing Exclamation Mark & Space
-`!` and ` ` are the only two characters that sort before `"`. Since each string ends with a `"`, those two characters will mess up the sorting if contained in a string. This can be solved by appending as many spaces to both the input and each guess as the maximum expected amount of consecutive spaces and exclamation marks.
+`!` and ` ` are the only two printable characters that sort before `"`. Since each string ends with a `"`, these characters appearing in the string would cause cases where the parser would normally continue the binary search to a higher value to go to a lower value instead. This can cause the correct character to be left out of the search if it's the one being checked at the middle of the range.
+
+To solve this issue, we add the last possible unicode character `￿`, with code `\uFFFF`, to the end of both the input string and our search string. This makes it so that, in every case where the sorting would depend on the character that delimits the end of our string, the sort would continue going lower. To accomodate for this change, we also changed the character that is selected for the comparisons to be the last one of the first half of the possible characters (used to be the first in the second half). This ensures the correct character isn't wrongfully excluded.
 
 #### Parsing Backslash
 To search for `\`, you have to search for `\\` instead. This sorts *after* `\"` (see quotes)
 
 #### Parsing Newline
-You can search for newlines by searching for `\n` (sorts after `\\`), however, you can't easily obtain a string with a value of `\n`. To obtain it, open a writable book, type enter, close the book, and copy the contents of the first page of the book into storage. Now, when you want to search for newline, copy this newline string into the right spot in your input character array.
+You can search for newlines by searching for `\n` (sorts after `\\`). However, you can't easily obtain a string with a value of `\n`. To obtain it, open a writable book, type enter, close the book, and copy the contents of the first page of the book into storage. Now, when you want to search for newline, copy this newline string into the right spot in your input character array.
 
 ### Tricks Used
 
 ### Command Block Loop
-Command blocks can be arranged in a loop (e.g. a 2x2 loop of chain command blocks, with an impulse command pointing into them to start the loop). Usually command blocks will only try to run once per tick, however, by setting their `UpdateLastExecution` value to `0` they will "forget" that they've already ran a command, and will be able to run another one.   
+Command blocks can be arranged in a loop (e.g. a 2x2 loop of chain command blocks, with an impulse command pointing into them to start the loop). Usually command blocks will only try to run once per tick. However, by setting their `UpdateLastExecution` value to `0` they will "forget" that they've already ran a command, and will be able to run another one.
 So, if you reset the `UpdateLastExecution` of all command blocks in the loop at the end of every loop iteration, you will be able to have a basically infinite command block loop.
+
+This setup is really convenient when combined with functions inside some of the command blocks, since they can change the contents of their neighbors and get output from them on  each iteration of the loop.
 
 ### Enchant Flattening
 When the enchant command fails, the `LastOutput` of a command block executing the command will contain a flattened version of the entity name.
@@ -231,7 +235,7 @@ Resolution of `nbt` components can only easily be done by signs.
 `help` subcommands always return the same output. `help me` returns the shortest `LastOutput` (i.e. `[<timestamp>] /me <action>`), and should thereby be the most efficient
 
 ### Modifying Tags
-Tags can be added and removed from entities by using the `data` command and modifying the `Tags` value of an entity. Tags added this way can contain characters that aren't valid in the `tag` command.
+Tags can be added and removed from entities by using the `data` command to modify their `Tags` value. Tags added this way can contain characters that aren't valid in the `tag` command.
 
 ## Credit
 
