@@ -214,6 +214,7 @@ To search for `\`, you have to search for `\\` instead. This sorts *after* `\"` 
 
 #### Parsing Newline
 You can search for newlines by searching for `\n` (sorts after `\\`). However, you can't easily obtain a string with a value of `\n`. To obtain it, open a writable book, type enter, close the book, and copy the contents of the first page of the book into storage. Now, when you want to search for newline, copy this newline string into the right spot in your input character array.
+Suso's general string parser contains a [loot table](https://github.com/5uso/String-Parser/blob/main/suso.str/data/suso.str/loot_tables/newline.json), to generate such a book automatically.
 
 ### Tricks Used
 
